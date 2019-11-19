@@ -4,7 +4,19 @@ In total the procedure has taken us 3 weeks roughly. The goal of this simple
 doc is to make the whole process a bit shorter and smoother for others.
 
 **This is supposed to be a collaborative doc, if you spot errors or things that
-could be improved, open a PR!**
+could be improved, open a Pull Request (PR)!**
+
+In particular, feel free to share tutorials, tools and scripts to help users
+have a more productive use of the cluster, e.g.:
+
+- how to make your code use checkpointing to be able to get long running processing
+  despite the 20 hour wall time limit;
+- how to make sure your code can leverage the hardware optimally (e.g. with mixed
+  precision and tensorcores);
+- how to make sure that your processing is not limited by suboptimal data access patterns
+  on the disks or inefficient pre-processing on the CPUs;
+- how to do efficient hyper-parameter tuning at scale;
+- how to synchronize you code between local computer and the cluster.
 
 # Access procedure for Jean Zay
 
