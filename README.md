@@ -22,12 +22,12 @@ have a more productive use of the cluster, e.g.:
 
 ## Overview
 
-- create an EDARI account (simple personal details)
-- fill a form about your project ("Déclaration de dossier"). Hardest part is to
+- Create an EDARI account (simple personal details)
+- Fill a form about your project ("Déclaration de dossier"). Hardest part is to
   figure out who your "Directeur de la structure de recherche" is and to have
   the form signed by him/her. You also need to write a few lines about your
   project.
-- fill a form about to get a computing account ("Déclaration de compte
+- Fill a form about to get a computing account ("Déclaration de compte
   calcul"). Hardest part is to figure out who your "Responsable Sécurité
   informatique" is and have the form signed by him/her as well as the
   "Directeur de la structure de recherche". You also need to declare one (or
@@ -44,11 +44,11 @@ Estimate of the time needed: 5 minutes
 To create an EDARI account: https://www.edari.fr/user/register
 
 In case something goes wrong:
-- contact for EDARI account: https://www.edari.fr/contact
+- Contact for EDARI account: https://www.edari.fr/contact
 - EDARI FAQ: https://www.edari.fr/faq
 
 Important details:
-- when filling your phone number, use a real one. Yes, you may get a call to
+- When filling your phone number, use a real one. Yes, you may get a call to
   have a better idea what you want to do ...
 
 ## "Déclaration de dossier" (project description)
@@ -95,12 +95,25 @@ In principle, you should receive a "Ouverture de votre compte" email from IDRIS
 roughly one week after having completed the previous step. Contact:
 assist@idris.fr if you have not received email within a week.
 
-- quite a long email with detailed instructions. One the first connection your
+- Quite a long email with detailed instructions. One the first connection your
   password is the concatenation of the first password in "Déclaration de compte
   calcul" and the password in the email. You are then asked to chose a new
   password.
 - Count 2-3 days after the email to actually be able to access Jean Zay. Some
   time is needed for the IP address to be added to Jean Zay.
+  
+
+## How to write a project proposal (request a lot of computing time)
+
+Estimate of the time needed: 1h (write a project) + a few days-weeks (depending on the request)
+Useful when you have used most of your computing time and want to fill a "Demande de ressources au fil de l'eau" (request more hours on the fly), and you would like to ask for more than 10k hours.
+
+- Describe the scientific project for which you need to perform experiments. Be specific about the team you work in, why do you need such computing ressources
+- Estimate the number of hours you will need. To provide an estimate you can estimate your daily/weekly computing time C you need and multiply by the number of months M you want to work on Jean-Zay for this project to get T = C * M.
+- Describe a typical experiment. How much computing ressources do you need: do you use 1 GPU per experiment or 10 GPUs, if 10 why, can be useful to justify your daily need of computation C. Be specific about the algorithms you are using, the data type (image, text, audio, video ...), the model you use (cnn, lstm, kernels, ...) and what your model is used for (predicting image labels, pose estimation, robot movements, ...)
+- Include references to back up your project. If you already have published, it is definitely a plus.
+
+Depending on your request, this proposal can be reviewed by 1 to 10 people.
 
 # Tips and Tricks
 
@@ -112,11 +125,11 @@ Doc: http://www.idris.fr/eng/jean-zay/
 
 ## Generic advice
 
-- find people that have accessed IDRIS clusters around you. If you have no idea
+- Find people that have accessed IDRIS clusters around you. If you have no idea
   who they may be, IT may know, ask them. They may save you a lot of time, for
   example they very likely know who the "Directeur de la structure de
   recherche" and "Responsable Sécurité informatique" are.
-- there is a big cultural gap between HPC sys-admins and IA users. For example,
+- There is a big cultural gap between HPC sys-admins and IA users. For example,
   most traditional "serious" HPC clusters do not have access to the internet,
   yes you have read this correctly, people in traditional HPC do not need
   internet access to work on their problems.
