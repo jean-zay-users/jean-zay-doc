@@ -101,17 +101,30 @@ assist@idris.fr if you have not received email within a week.
   password.
 - Count 2-3 days after the email to actually be able to access Jean Zay. Some
   time is needed for the IP address to be added to Jean Zay.
-  
 
 ## How to write a project proposal (request a lot of computing time)
 
-Estimate of the time needed: 1h (write a project) + a few days-weeks (depending on the request)
-Useful when you have used most of your computing time and want to fill a "Demande de ressources au fil de l'eau" (request more hours on the fly), and you would like to ask for more than 10k hours.
+Estimate of the time needed: 1h (write a project) + a few days/weeks
+for approval (depending on the request). Useful when you have used most of your
+computing time and want to fill a "Demande de ressources au fil de l'eau"
+(request more hours on the fly), and you would like to ask for more than 10k
+hours.
 
-- Describe the scientific project for which you need to perform experiments. Be specific about the team you work in, why do you need such computing ressources
-- Estimate the number of hours you will need. To provide an estimate you can estimate your daily/weekly computing time C you need and multiply by the number of months M you want to work on Jean-Zay for this project to get T = C * M.
-- Describe a typical experiment. How much computing ressources do you need: do you use 1 GPU per experiment or 10 GPUs, if 10 why, can be useful to justify your daily need of computation C. Be specific about the algorithms you are using, the data type (image, text, audio, video ...), the model you use (cnn, lstm, kernels, ...) and what your model is used for (predicting image labels, pose estimation, robot movements, ...)
-- Include references to back up your project. If you already have published, it is definitely a plus.
+- Describe the scientific project for which you need to perform experiments. Be
+  specific about the team you work in, why do you need such computing
+  ressources
+- Estimate the number of hours you will need. To provide an estimate you can
+  estimate your daily/weekly computing time `C` you need and multiply by the
+  number of months `M` you want to work on Jean-Zay for this project to get
+  `T = C * M`.
+- Describe a typical experiment. How much computing ressources do you need: do
+  you use 1 GPU per experiment or 10 GPUs, if 10 why, can be useful to justify
+  your daily need of computation `C`. Be specific about the algorithms you are
+  using, the data type (image, text, audio, video ...), the model you use (cnn,
+  lstm, kernels, ...) and what your model is used for (predicting image labels,
+  pose estimation, robot movements, ...)
+- Include references to back up your project. If you already have published, it
+  is definitely a plus.
 
 Depending on your request, this proposal can be reviewed by 1 to 10 people.
 
