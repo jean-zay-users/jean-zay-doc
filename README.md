@@ -1,13 +1,16 @@
 # Why this doc?
 
-In total the procedure has taken us 3 weeks roughly. The goal of this simple
-doc is to make the whole process a bit shorter and smoother for others.
+In total the procedure to access Jean Zay has taken us 3 weeks roughly. The
+goal of this simple doc is to make the whole access process a bit shorter and
+smoother for others.
 
 **This is supposed to be a collaborative doc, if you spot errors or things that
 could be improved, open a Pull Request (PR)!**
 
-In particular, feel free to share tutorials, tools and scripts to help users
-have a more productive use of the cluster, e.g.:
+In the medium term, more material could be added to discuss tips and tricks,
+limitations, work-arounds, etc ... on Jean Zay. In particular, feel free to
+share tutorials, tools and scripts to help users have a more productive use of
+the cluster, e.g.:
 
 - how to make your code use checkpointing to be able to get long running processing
   despite the 20 hour wall time limit;
