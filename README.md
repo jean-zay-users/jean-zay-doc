@@ -168,7 +168,7 @@ Briefly:
 - `$DSDIR` (popular databases on demand).
 
 It is worth noting that `$WORK` and `$SCRATCH` consist of a farm of SSD storage
-devices and they provide the best performace in reading/writing operations.
+devices and they provide the best performance in reading/writing operations.
 `$SCRATCH` is "cleaned" every 30 days, so you **risk to lose your data if your
 keep it there**. Privilege the use of `$WORK` to avoid this problem.
 
