@@ -151,6 +151,28 @@ Hardware: http://www.idris.fr/eng/jean-zay/cpu/jean-zay-cpu-hw-eng.html
 
 Doc: http://www.idris.fr/eng/jean-zay/
 
+## Mananging your data and the storage spaces
+
+Be careful about the place where you put your data on the JZ super-computer,
+since there are quotas for each project, depending on the storage space and the
+number of files (inodes) that you use. Additionally, some spaces are temporary.
+
+There is a detailed description of the storage spaces [here](http://www.idris.fr/jean-zay/cpu/jean-zay-cpu-calculateurs-disques.html).
+
+Briefly: 
+
+- `$HOME` (3Gb) -> for config files.
+- `$WORK` (limited on inodes) -> for code, (small) databases.
+- `$SCRATCH` (very large limits) -> output data, large databases
+- `$STORE` (large space, occasional consultation)  -> permanent large databases. 
+- `$DSDIR` (popular databases on demand).
+
+If you need to send data to Jean-Zay a good idea is to use `rsync`. E.g.:
+t
+```
+rsync -avz -e ssh --progress  user@jeanzay:/gpfsscratch/your/remote/dir/ /your/local/database/
+```
+
 ## Generic advice
 
 - Find people that have accessed IDRIS clusters around you. If you have no idea
