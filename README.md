@@ -168,7 +168,7 @@ Briefly:
 - `$DSDIR` (popular databases on demand).
 
 If you need to send data to Jean-Zay a good idea is to use `rsync`. E.g.:
-t
+
 ```
 rsync -avz -e ssh --progress  user@jeanzay:/gpfsscratch/your/remote/dir/ /your/local/database/
 ```
