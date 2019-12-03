@@ -1,6 +1,6 @@
 # Why this doc?
 
-In total the procedure to access Jean Zay has taken us 3 weeks roughly. The
+In total the procedure to access Jean Zay could be up to 3 weeks roughly. The
 goal of this simple doc is to make the whole access process a bit shorter and
 smoother for others.
 
@@ -12,12 +12,12 @@ limitations, work-arounds, etc ... on Jean Zay. In particular, feel free to
 share tutorials, tools and scripts to help users have a more productive use of
 the cluster, e.g.:
 
-- how to make your code use checkpointing to be able to get long running processing
-  despite the 20 hour wall time limit;
-- how to make sure your code can leverage the hardware optimally (e.g. with mixed
-  precision and tensorcores);
-- how to make sure that your processing is not limited by suboptimal data access patterns
-  on the disks or inefficient pre-processing on the CPUs;
+- how to make your code use checkpointing to be able to get long running
+  processing despite the 20 hour wall time limit;
+- how to make sure your code can leverage the hardware optimally (e.g. with
+  mixed precision and tensorcores);
+- how to make sure that your processing is not limited by suboptimal data
+  access patterns on the disks or inefficient pre-processing on the CPUs;
 - how to do efficient hyper-parameter tuning at scale;
 - how to synchronize you code between local computer and the cluster.
 
@@ -25,7 +25,8 @@ the cluster, e.g.:
 
 ## Overview
 
-- Create an EDARI account (simple personal details)
+- Create an [EDARI account](https://www.edari.fr/user/register) (simple
+  personal details).
 - Fill a form about your project ("Déclaration de dossier"). Hardest part is to
   figure out who your "Directeur de la structure de recherche" is and to have
   the form signed by him/her. You also need to write a few lines about your
