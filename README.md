@@ -163,9 +163,14 @@ Briefly:
 
 - `$HOME` (3Gb) -> for config files.
 - `$WORK` (limited on inodes) -> for code, (small) databases.
-- `$SCRATCH` (very large limits) -> output data, large databases
+- `$SCRATCH` (very large limits, temporary) -> output data, large databases
 - `$STORE` (large space, occasional consultation)  -> permanent large databases. 
 - `$DSDIR` (popular databases on demand).
+
+It is worth noting that `$WORK` and `$SCRATCH` consist of a farm of SSD storage
+devices and they provide the best performace in reading/writing operations.
+`$SCRATCH` is "cleaned" every 30 days, so you **risk to lose your data if your
+keep it there**. Privilege the use of `$WORK` to avoid this problem.
 
 If you need to send data to Jean-Zay a good idea is to use `rsync`. E.g.:
 
