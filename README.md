@@ -25,12 +25,20 @@ the cluster, e.g.:
 
 ## Overview
 
+There are two different types of procedure if you want to access JZ
+super-computer, depending on the usage that you are planning to do. The
+first one is intended to users developing AI algorithms (mostly GPU
+partition). The second one to people performing high performance computing 
+(typically a mixed usage of CPUs and GPUs). These guidelines are focused on the
+first case (developing AI algorithms).
+
 - Create an [EDARI account](https://www.edari.fr/user/register) (simple
   personal details).
-- Fill a form about your project ("Déclaration de dossier"). Hardest part is to
-  figure out who your "Directeur de la structure de recherche" is and to have
-  the form signed by him/her. You also need to write a few lines about your
-  project.
+- Once on your new user space, go to the "Intelligence Artificielle" section
+  and fill a form about your project ("Déclaration de dossier"). Hardest part
+  is to figure out who your "Directeur de la structure de recherche" is and to
+  have the form signed by him/her. You also need to write a few lines about
+  your project.
 - Fill a form about to get a computing account ("Déclaration de compte
   calcul"). Hardest part is to figure out who your "Responsable Sécurité
   informatique" is and have the form signed by him/her as well as the
@@ -43,7 +51,7 @@ the cluster, e.g.:
 
 ## EDARI account (administrative account)
 
-Estimate of the time needed: 5 minutes
+*Estimate of the time needed: 5 minutes*
 
 To create an EDARI account: https://www.edari.fr/user/register
 
@@ -57,8 +65,8 @@ Important details:
 
 ## "Déclaration de dossier" (project description)
 
-Estimate of the time needed: 15 minutes (fill the form) + 1-2 days (figure out
-the right person to sign the form and get him/her to sign it)
+*Estimate of the time needed: 15 minutes (fill the form) + 1-2 days (figure out
+the right person to sign the form and get him/her to sign it)*
 
 Important details:
 - "Directeur de la structure de recherche" : Head of the lab, head of the
@@ -80,13 +88,14 @@ account validated.
 
 ## "Déclaration de compte calcul" (computing account creation for Jean Zay)
 
-Estimate of the time needed: 15 minutes (fill the form) + 1-2 days (figure out
-the right person to sign the form and get him/her to sign it).
+*Estimate of the time needed: 15 minutes (fill the form) + 1-2 days (figure out
+the right person to sign the form and get him/her to sign it).*
 
 Important details:
 - "Responsable sécurité informatique", this is someone that should be able to
-  turn deny you acess to Jean Zay, in case there is any issue with your account
-  activity. more details
+  turn deny you access to Jean Zay, in case there is any issue with your
+  account activity. He/She must be able to certify that you respect the IT
+  charter in your host lab/institution. 
 - IP addresses to connect to Jean Zay. Make sure they are static IP addresses
   (e.g. not your IP address from you home). In most cases: your desktop in your
   lab will have a static IP address, but best confirm with your local IT
@@ -108,8 +117,10 @@ assist@idris.fr if you have not received email within a week.
 
 ## How to write a project proposal (request a lot of computing time)
 
-Estimate of the time needed: 1h (write a project) + a few days/weeks
-for approval (depending on the request). Useful when you have used most of your
+*Estimate of the time needed: 1h (write a project) + a few days/weeks
+for approval (depending on the request).* 
+
+Useful when you have used most of your
 computing time and want to fill a "Demande de ressources au fil de l'eau"
 (request more hours on the fly), and you would like to ask for more than 10k
 hours.
