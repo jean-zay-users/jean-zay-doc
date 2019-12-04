@@ -151,7 +151,7 @@ Hardware: http://www.idris.fr/eng/jean-zay/cpu/jean-zay-cpu-hw-eng.html
 
 Doc: http://www.idris.fr/eng/jean-zay/
 
-## Mananging your data and the storage spaces
+## Managing your data and the storage spaces
 
 Be careful about the place where you put your data on the JZ super-computer,
 since there are quotas for each project, depending on the storage space and the
