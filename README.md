@@ -180,23 +180,17 @@ rsync -avz -e ssh --progress  user@jeanzay:/gpfsscratch/your/remote/dir/ /your/l
 
 ## How to use interactive mode
 
-Interactive mode using SLURM  can be done by using two commands:
-`salloc` and `srun`.  First, you need to reserve the  
-ressources you want ot use. For example, if you need a node with 4 GPUs during 1
+Interactive mode using SLURM can be done by using the command
+`srun`.  
+For example, if you want to use a node with 4 GPUs during 1
 hour, you can type:
 
 ``` 
-salloc --ntasks=1 --cpus-per-task=40 --gres=gpu:4 --hint=nomultithread --time=01:00:00
+srun --ntasks=1 --gres=gpu:4 --time=01:00:00 --pty bash -i 
 ```
 
-Then, you can launch an interactive shell using the allocated ressources:
-
-``` 
-srun --pty bash -i 
-```
-
-Now, you have a fresh new shell where you can try your scripts interactivly for
-1h. 
+Now, you have a brand new shell where you can try your scripts interactivly
+during 1h. 
 
 
 ## Generic advice
