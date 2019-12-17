@@ -189,7 +189,7 @@ hour, you can type:
 srun --ntasks=1 --gres=gpu:4 --time=01:00:00 --pty bash -i 
 ```
 
-Now, you have a brand new shell where you can try your scripts interactivly
+Now, you have a brand new shell on a compute node where you can run your scripts interactively
 during 1h. 
 
 
