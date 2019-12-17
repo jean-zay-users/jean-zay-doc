@@ -178,6 +178,21 @@ If you need to send data to Jean-Zay a good idea is to use `rsync`. E.g.:
 rsync -avz -e ssh --progress  user@jeanzay:/gpfsscratch/your/remote/dir/ /your/local/database/
 ```
 
+## How to use interactive mode
+
+Interactive mode using SLURM can be done by using the command
+`srun`.  
+For example, if you want to use a node with 4 GPUs during 1
+hour, you can type:
+
+``` 
+srun --ntasks=1 --gres=gpu:4 --time=01:00:00 --pty bash -i 
+```
+
+Now, you have a brand new shell on a compute node where you can run your scripts interactively
+during 1h. 
+
+
 ## Generic advice
 
 - Find people that have accessed IDRIS clusters around you. If you have no idea
