@@ -95,7 +95,7 @@ Important details:
 - "Responsable sécurité informatique", this is someone that should be able to
   turn deny you access to Jean Zay, in case there is any issue with your
   account activity. He/She must be able to certify that you respect the IT
-  charter in your host lab/institution. 
+  charter in your host lab/institution. In CNRS labs, he/she is known as the CSSI (Chargé·e de la Sécurité des Systèmes Informatiques).
 - IP addresses to connect to Jean Zay. Make sure they are static IP addresses
   (e.g. not your IP address from you home). In most cases: your desktop in your
   lab will have a static IP address, but best confirm with your local IT
@@ -171,6 +171,9 @@ It is worth noting that `$WORK` and `$SCRATCH` consist of a farm of SSD storage
 devices and they provide the best performance in reading/writing operations.
 `$SCRATCH` is "cleaned" every 30 days, so you **risk to lose your data if your
 keep it there**. Privilege the use of `$WORK` to avoid this problem.
+
+You can consult your disk quota anytime with the command `idrquota` (see `idrquota -h`). 
+If you need more space or inodes on your personal spaces (`$WORK` or `$STORE`), just ask the support team at assist@idris.fr.
 
 If you need to send data to Jean-Zay a good idea is to use `rsync`. E.g.:
 
