@@ -40,8 +40,11 @@ the Jean Zay cluster, e.g.:
 # Useful links
 
 Hardware: http://www.idris.fr/eng/jean-zay/cpu/jean-zay-cpu-hw-eng.html
+
 Doc: http://www.idris.fr/eng/jean-zay/
+
 Doc in French (more accurate sometimes): http://www.idris.fr/jean-zay/
+
 Email for Jean Zay user support: [assist@idris.fr](mailto:assist@idris.fr).
 
 # Generic advice
