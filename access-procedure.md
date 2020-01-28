@@ -1,7 +1,7 @@
 # Access procedure for Jean Zay
 
 Our experience is that the access procedure for Jean Zay takes roughly 3
-weeks (add 1-2 monts on top of that if you are not French for background
+weeks (add 1-2 months on top of that if you are not French for background
 security checks). It does seem long but it is definitely worth it.
 
 ## Generic advice
