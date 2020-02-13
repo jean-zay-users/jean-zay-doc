@@ -16,10 +16,11 @@ Briefly:
 - `$STORE` (large space, occasional consultation)  -> permanent large databases. 
 - `$DSDIR` (popular databases on demand).
 
-It is worth noting that `$WORK` and `$SCRATCH` consist of a farm of SSD storage
-devices and they provide the best performance in reading/writing operations.
-`$SCRATCH` is "cleaned" every 30 days, so you **risk to lose your data if your
-keep it there**. Privilege the use of `$WORK` to avoid this problem.
+It is worth noting that `$SCRATCH` consists of a farm of SSD storage
+devices and it provides the best performance in reading/writing operations.
+You must also be aware that `$SCRATCH` is regularly "cleaned": files that 
+have not been accessed (i.e. at least read) for 30 days are definitely 
+removed. So you **risk to lose your data** if your keep it there without using it.
 
 You can consult your disk quota anytime with the command `idrquota` (see
 `idrquota -h`). If you need more space or inodes on your personal spaces
