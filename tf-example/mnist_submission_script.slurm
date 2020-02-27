@@ -21,4 +21,4 @@ module load tensorflow-gpu/py3/2.1.0
 
 srun python ./mnist_example.py -s&
 
-wait  # wait for all ccc_mprun(s) to complete.
+wait

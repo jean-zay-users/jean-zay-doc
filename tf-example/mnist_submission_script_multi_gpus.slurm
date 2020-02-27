@@ -22,4 +22,4 @@ module load tensorflow-gpu/py3/2.1.0
 srun --ntasks=1 python ./mnist_example.py -gpus 0&
 srun --ntasks=1 python ./mnist_example.py -gpus 1&
 
-wait  # wait for all ccc_mprun(s) to complete.
+wait
