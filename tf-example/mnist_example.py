@@ -11,7 +11,7 @@ from tensorflow.keras import layers
     'cuda_visible_devices',
     '-gpus',
     default=None,
-    help='The GPUs you want visible for this task',
+    help='The GPUs you want visible for this task, comma separated. Defaults to all GPUs visible',
 )
 @click.option(
     'save',
