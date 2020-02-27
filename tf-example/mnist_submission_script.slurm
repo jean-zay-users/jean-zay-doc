@@ -8,7 +8,7 @@
 # de Slurm "multithread" fait bien référence à l'hyperthreading.
 #SBATCH --hint=nomultithread         # on réserve des coeurs physiques et non logiques
 #SBATCH --distribution=block:block   # on épingle les tâches sur des coeurs contigus
-#SBATCH --time=10:00:00              # temps d’exécution maximum demande (HH:MM:SS)
+#SBATCH --time=3:00:00              # temps d’exécution maximum demande (HH:MM:SS)
 #SBATCH --output=tf_mnist%j.out # nom du fichier de sortie
 #SBATCH --error=tf_mnist%j.out  # nom du fichier d'erreur (ici commun avec la sortie)
 
