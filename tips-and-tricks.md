@@ -49,5 +49,14 @@ during 1h.
 
 ## Connect seamlessly from your local machine
 
-Add your public ssh key to the `~/.ssh/authorized_keys` of your account on the jean-zay cluster.
+Add local your public ssh key to the `~/.ssh/authorized_keys` of your account on the jean-zay cluster.
 Your local public ssh key can be found in `~/.ssh/id_rsa.pub`.
+
+In your local ssh configuration, found in `~/.ssh/config`, you can also add the following:
+```
+Host jz
+hostname jean-zay.idris.fr
+user <user-name>
+```
+
+To connect to the jean-zay cluster you will then just need to do `ssh jz`.
