@@ -1,4 +1,6 @@
 # all taken from https://www.tensorflow.org/guide/keras/functional
+import os
+
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
