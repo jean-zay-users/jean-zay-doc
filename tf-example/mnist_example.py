@@ -15,6 +15,7 @@ from tensorflow.keras import layers
 )
 @click.option(
     'save',
+    '-s',
     '--save',
     is_flag=True,
     help='Whether you want to save the model or not',
