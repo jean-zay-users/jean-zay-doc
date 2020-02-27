@@ -19,7 +19,7 @@ module purge
 module load python/3.7.5
 module load tensorflow-gpu/py3/2.1.0
 
-srun python ./mnist_example.py -gpus 0&
-srun python ./mnist_example.py -gpus 1&
+srun python /gpfslocalsup/pub/idrtools/bind_gpu.sh ./mnist_example.py -gpus 0&
+srun python /gpfslocalsup/pub/idrtools/bind_gpu.sh ./mnist_example.py -gpus 1&
 
 wait  # wait for all ccc_mprun(s) to complete.
