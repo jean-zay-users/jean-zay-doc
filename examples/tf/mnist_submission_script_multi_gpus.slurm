@@ -1,16 +1,15 @@
 #!/bin/bash
-#SBATCH --job-name=tf_mnist_multi_gpus     # nom du job
-#SBATCH --ntasks=2                   # nombre de tâche MPI
-#SBATCH --ntasks-per-node=2          # nombre de tâche MPI par noeud
-#SBATCH --gres=gpu:2                 # nombre de GPU à réserver par nœud
-#SBATCH --cpus-per-task=10           # nombre de coeurs à réserver par tâche
-# /!\ Attention, la ligne suivante est trompeuse mais dans le vocabulaire
-# de Slurm "multithread" fait bien référence à l'hyperthreading.
-#SBATCH --hint=nomultithread         # on réserve des coeurs physiques et non logiques
-#SBATCH --distribution=block:block   # on épingle les tâches sur des coeurs contigus
-#SBATCH --time=3:00:00              # temps d’exécution maximum demande (HH:MM:SS)
-#SBATCH --output=tf_mnist_multi_gpus%j.out # nom du fichier de sortie
-#SBATCH --error=tf_mnist_multi_gpus%j.out  # nom du fichier d'erreur (ici commun avec la sortie)
+#SBATCH --job-name=tf_mnist_multi_gpus     # job name
+#SBATCH --ntasks=2                   # number of MP tasks
+#SBATCH --ntasks-per-node=2          # number of MPI tasks per node
+#SBATCH --gres=gpu:2                 # number of GPUs per node
+#SBATCH --cpus-per-task=10           # number of cores per tasks
+# /!\ Caution, in the following line, "multithread" refers to hyperthreading.
+#SBATCH --hint=nomultithread         # we get physical cores not logical
+#SBATCH --distribution=block:block   # we pin the tasks on contiguous cores
+#SBATCH --time=3:00:00              # maximum execution time (HH:MM:SS)
+#SBATCH --output=tf_mnist_multi_gpus%j.out # output file name
+#SBATCH --error=tf_mnist_multi_gpus%j.out  # error file name
 
 set -x
 cd $WORK/jean-zay-doc/examples/tf
