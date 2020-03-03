@@ -13,7 +13,7 @@
 #SBATCH --error=tf_mnist_multi_gpus%j.out  # nom du fichier d'erreur (ici commun avec la sortie)
 
 set -x
-cd $WORK/jean-zay-doc/tf-example
+cd $WORK/jean-zay-doc/examples/tf
 
 module purge
 module load python/3.7.5

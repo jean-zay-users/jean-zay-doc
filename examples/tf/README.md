@@ -14,5 +14,5 @@ git clone https://github.com/jean-zay-users/jean-zay-doc.git
 
 Finally you can just launch the batch job (single GPU) via:
 ```
-sbatch jean-zay-doc/tf-example/mnist_submission_script.slurm
+sbatch jean-zay-doc/examples/tf/mnist_submission_script.slurm
 ```
