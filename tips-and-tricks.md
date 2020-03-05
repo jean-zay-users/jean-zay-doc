@@ -7,17 +7,19 @@
 This is the simplest approach if you are familiar with `conda`.
 
 To install `miniconda` in `$WORK/miniconda3`:
-```
+```sh
 # download Miniconda installer
 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+# install Miniconda
 MINICONDA_PATH=$WORK/miniconda3
 chmod +x miniconda.sh && ./miniconda.sh -b -p $MINICONDA_PATH
+# make sure conda is up-to-date
 source $MINICONDA_PATH/etc/profile.d/conda.sh
 conda update --yes conda
 ```
 
 You probably want to add this to your `.bashrc` to activate your conda environment on each login:
-```
+```sh
 MINICONDA_PATH=$WORK/miniconda3
 source $MINICONDA_PATH/etc/profile.d/conda.sh
 ```
@@ -26,7 +28,7 @@ If you run out of space or inodes on `$WORK` (`irdquota -w` can help you
 figuring out whether you are close to the limit) you can send an email to
 [assist@idris.fr](mailto:assist@idris.fr) and ask for an increase. Try
 something between 5x-10x with some small justification and that should go
-through easily (if not open an issue to fix this doc!).
+through easily (if not open an issue to improve this doc!).
 
 
 
@@ -34,8 +36,7 @@ through easily (if not open an issue to fix this doc!).
 
 ### How to launch an interactive job
 
-Interactive mode using SLURM can be done by using the command
-`srun`.
+Your can use `srun` to launch an interactive job.
 
 For example, if you want to use a node with 4 GPUs during 1
 hour, you can type:
