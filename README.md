@@ -15,7 +15,7 @@ could be improved, open an
 better a [Pull Request (PR)](https://github.com/jean-zay-users/jean-zay-doc/compare)!**
 
 We also use gitter for chat: https://gitter.im/jean-zay-users/community. Don't hesitate 
-to get come and ask your question!
+to get involved there and ask questions!
 
 # Content
 
