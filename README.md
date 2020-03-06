@@ -14,6 +14,9 @@ could be improved, open an
 [issue](https://github.com/jean-zay-users/jean-zay-doc/issues/new) or even
 better a [Pull Request (PR)](https://github.com/jean-zay-users/jean-zay-doc/compare)!**
 
+We also use gitter for chat: https://gitter.im/jean-zay-users/community. Don't hesitate 
+to get come and ask your question!
+
 # Content
 
 - [Access procedure](./access-procedure.md). The access procedure for Jean Zay
