@@ -15,7 +15,6 @@ set -x
 cd $WORK/jean-zay-doc/examples/tf
 
 module purge
-module load python/3.7.5
 module load tensorflow-gpu/py3/2.1.0
 
 srun python ./mnist_example.py -s&
