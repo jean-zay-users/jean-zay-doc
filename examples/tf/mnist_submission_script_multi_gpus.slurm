@@ -17,7 +17,6 @@ cd $WORK/jean-zay-doc/examples/tf
 module purge
 module load tensorflow-gpu/py3/2.1.0
 
-srun --ntasks=1 python ./mnist_example.py -gpus 0&
-srun --ntasks=1 python ./mnist_example.py -gpus 1&
+srun --multi-prog ./mpmd_multi_gpu.conf
 
 wait
