@@ -14,8 +14,10 @@ could be improved, open an
 [issue](https://github.com/jean-zay-users/jean-zay-doc/issues/new) or even
 better a [Pull Request (PR)](https://github.com/jean-zay-users/jean-zay-doc/compare)!**
 
-We also use gitter for chat: https://gitter.im/jean-zay-users/community. Don't hesitate 
-to get involved there and ask questions!
+We use gitter for chat, don't hesitate to get involved
+[there](https://gitter.im/jean-zay-users/jean-zay-doc) and ask questions!
+
+[![Gitter](https://img.shields.io/gitter/room/jean-zay-users/jean-zay-doc.svg)](https://gitter.im/jean-zay-users/jean-zay-doc)
 
 # Content
 
