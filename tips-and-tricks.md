@@ -1,6 +1,50 @@
 # Tips and Tricks
 
-## Managing your data and the storage spaces
+## Python
+
+### Install miniconda (recommended solution if you are already familiar with conda)
+
+Install `miniconda` in `$WORK/miniconda3`:
+```sh
+# download Miniconda installer
+wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+# install Miniconda
+MINICONDA_PATH=$WORK/miniconda3
+chmod +x miniconda.sh && ./miniconda.sh -b -p $MINICONDA_PATH
+# make sure conda is up-to-date
+source $MINICONDA_PATH/etc/profile.d/conda.sh
+conda update --yes conda
+# Update your .bashrc to initialise your conda base environment on each login
+conda init
+```
+
+If you run out of space or inodes on `$WORK` (`irdquota -w` can help you
+figuring out whether you are close to the limit) you can send an email to
+[assist@idris.fr](mailto:assist@idris.fr) and ask for an increase. Try
+something between 5x-10x with some small justification and that should go
+through without too much problem (if that's not the case, open an
+[issue](https://github.com/jean-zay-users/jean-zay-doc/issues/new) to improve
+this doc!).
+
+## SLURM
+
+### How to launch an interactive job
+
+Your can use `srun` to launch an interactive job.
+
+For example, if you want to use a node with 4 GPUs during 1
+hour, you can type:
+```
+srun --ntasks=1 --gres=gpu:4 --time=01:00:00 --pty bash -i
+```
+
+Now, you have a brand new shell on a compute node where you can run your scripts interactively
+during 1h.
+
+
+## Miscellaneous
+
+### Managing your data and the storage spaces
 
 Be careful about the place where you put your data on the JZ super-computer,
 since there are quotas for each project, depending on the storage space and the
@@ -33,21 +77,7 @@ If you need to send data to Jean-Zay a good idea is to use `rsync`. E.g.:
 rsync -avz /your/local/database/ your-jean-zay-login@jean-zay:/gpfsscratch/your/remote/dir/
 ```
 
-## How to use interactive mode
-
-Interactive mode using SLURM can be done by using the command
-`srun`.
-
-For example, if you want to use a node with 4 GPUs during 1
-hour, you can type:
-```
-srun --ntasks=1 --gres=gpu:4 --time=01:00:00 --pty bash -i
-```
-
-Now, you have a brand new shell on a compute node where you can run your scripts interactively
-during 1h.
-
-## Connect seamlessly from your local machine
+### Connect seamlessly from your local machine
 
 Add local your public ssh key to the `~/.ssh/authorized_keys` of your account on the jean-zay cluster.
 Your local public ssh key can be found in `~/.ssh/id_rsa.pub`.
