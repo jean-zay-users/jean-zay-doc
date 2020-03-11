@@ -52,6 +52,7 @@ Doc: http://www.idris.fr/eng/jean-zay/
 
 Doc in French (more accurate sometimes): http://www.idris.fr/jean-zay/
 
+Email for Jean Zay user support: [assist@idris.fr](mailto:assist@idris.fr).
 
 # Generic advice
 
