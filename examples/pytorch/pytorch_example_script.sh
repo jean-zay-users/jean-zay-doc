@@ -16,6 +16,4 @@ cd $WORK/jean-zay-doc/examples/pytorch
 module purge
 module load pytorch-gpu/py3/1.4.0 
 
-srun python ./mnist_example.py &
-
-wait
+python ./mnist_example.py 
