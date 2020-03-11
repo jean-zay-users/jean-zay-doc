@@ -1,4 +1,4 @@
-# Tensorflow example script
+# Pytorch example script
 
 To run this script you will need to clone the jean-zay repo in your `$WORK`
 dir, then:
