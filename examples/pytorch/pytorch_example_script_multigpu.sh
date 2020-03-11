@@ -8,8 +8,8 @@
 #SBATCH --distribution=block:block   # we pin the tasks on contiguous cores
 #SBATCH --time=3:00:00              # maximum execution time (HH:MM:SS)
 #SBATCH --output=pytorch_mnist%j.out # output file name
-#SBATCH --error=pytorch_mnist%j.out  # error file name
-#SBATCH --array=0-9
+#SBATCH --error=pytorch_mnist%j.err  # error file name
+#SBATCH --array=1-10
 
 
 cd $WORK/jean-zay-doc/examples/pytorch
@@ -17,7 +17,6 @@ cd $WORK/jean-zay-doc/examples/pytorch
 module purge
 module load pytorch-gpu/py3/1.4.0 
 GAMMA_STEP=('0.1' '0.2' '0.3' '0.4' '0.5' '0.6' '0.7' '0.8' '0.9' '1.0') 
-GAMMA = echo ${GAMMA_STEP[$SLURM_ARRAY_TASK_ID]}
-srun python ./mnist_example.py --gamma $GAMMA &
+srun python ./mnist_example.py --gamma ${GAMMA_STEP[$SLURM_ARRAY_TASK_ID]} &
 
 wait
