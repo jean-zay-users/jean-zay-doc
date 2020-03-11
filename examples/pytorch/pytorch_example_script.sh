@@ -8,7 +8,7 @@
 #SBATCH --distribution=block:block   # we pin the tasks on contiguous cores
 #SBATCH --time=3:00:00              # maximum execution time (HH:MM:SS)
 #SBATCH --output=pytorch_mnist%j.out # output file name
-#SBATCH --error=pytorch_mnist%j.out  # error file name
+#SBATCH --error=pytorch_mnist%j.err  # error file name
 
 set -x
 cd $WORK/jean-zay-doc/examples/pytorch
@@ -16,6 +16,6 @@ cd $WORK/jean-zay-doc/examples/pytorch
 module purge
 module load pytorch-gpu/py3/1.4.0 
 
-srun python ./mnist_example.py -s&
+srun python ./mnist_example.py &
 
 wait
