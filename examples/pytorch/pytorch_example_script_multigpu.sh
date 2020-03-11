@@ -12,13 +12,12 @@
 #SBATCH --array=0-9
 
 
-set -x
 cd $WORK/jean-zay-doc/examples/pytorch
 
 module purge
 module load pytorch-gpu/py3/1.4.0 
 GAMMA_STEP=('0.1' '0.2' '0.3' '0.4' '0.5' '0.6' '0.7' '0.8' '0.9' '1.0') 
 GAMMA = echo ${GAMMA_STEP[$SLURM_ARRAY_TASK_ID]}
-srun python ./mnist_example.py --gamma GAMMA -s&
+srun python ./mnist_example.py --gamma GAMMA &
 
 wait
