@@ -27,6 +27,8 @@ We use gitter for chat, don't hesitate to get involved
   it.
 - [Tips and tricks](./tips-and-tricks.md)
 - [Limitations](./limitations.md)
+- Example scripts: [PyTorch examples](./examples/pytorch) and [Tensorflow
+  examples](./examples/tf).
 
 In the medium term, more material could be added to discuss tips and tricks,
 limitations, work-arounds, etc ... on Jean Zay. In particular, feel free to
