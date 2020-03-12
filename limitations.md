@@ -10,6 +10,9 @@ There is currently no way of using a docker image on Jean Zay. They are working
 on it but at the time of writing (end January 2020) it is likely to take
 between 3 and 6 months so be ready for some time between May and August 2020.
 
+Last time we heard (February 2020) from this effort, `singularity` would be the
+tool available on Jean Zay to run docker images.
+
 ## SSH port forwarding disabled
 
 SSH port forwarding is disabled by Jean Zay sys-admin for security reasons. I
