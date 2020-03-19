@@ -1,6 +1,7 @@
 #!/bin/bash
 # This job will run 32 MPI process on 8 nodes, each node will host 4 MPI process, each one pinned on a GPU.
 #SBATCH --job-name=toto             # job name
+#SBATCH --partition=gpu_p1          # nodes on gpu_p1 have 4 GPUs each
 #SBATCH --ntasks=32                 # number of MPI task
 #SBATCH --ntasks-per-node=4         # number of MPI task per node
 #SBATCH --gres=gpu:4                # number of GPUs per node
@@ -10,7 +11,7 @@
 #SBATCH --output=toto_log_%j.out    # std out
 #SBATCH --error=toto_log_%j.out     # std err
 #SBATCH --exclusive                 # we reserve the entire node four our job
-#### >> Add SBATCH instructions for QoS, Partitions, Account, etc << ###
+#### >> Add SBATCH instructions for QoS, Account, etc << ###
  
 cd ${SLURM_SUBMIT_DIR}
 
