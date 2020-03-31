@@ -56,6 +56,8 @@ Doc in French (more accurate sometimes): http://www.idris.fr/jean-zay/
 
 Email for Jean Zay user support: [assist@idris.fr](mailto:assist@idris.fr).
 
+Gitter chat: [https://gitter.im/jean-zay-users/jean-zay-doc](https://gitter.im/jean-zay-users/jean-zay-doc)
+
 # Generic advice
 
 - There is a big cultural gap between traditional HPC (High Performance
