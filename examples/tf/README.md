@@ -1,6 +1,6 @@
 # Tensorflow example script
 
-To run this script you will need to first install click in your environment.
+To run the examples you will need to first install `click` in your environment.
 ```
 module load python/3.7.5 &&\
 pip install click
@@ -12,7 +12,27 @@ cd $WORK &&\
 git clone https://github.com/jean-zay-users/jean-zay-doc.git
 ```
 
-Finally you can just launch the batch job (single GPU) via:
+## Classical examples
+
+For the single GPU job you can do:
 ```
 sbatch jean-zay-doc/examples/tf/mnist_submission_script.slurm
+```
+
+For the multi GPU job you can do:
+```
+sbatch jean-zay-doc/examples/tf/mnist_submission_script_multi_gpus.slurm
+```
+
+## Dask example
+
+To run the dask example you will need to install `dask-jobqueue` in your environment additionally.
+```
+module load python/3.7.5 &&\
+pip install click dask-jobqueue
+```
+
+You can then do:
+```
+python jean-zay-doc/examples/tf/dask_script.py
 ```
