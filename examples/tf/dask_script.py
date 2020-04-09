@@ -27,7 +27,7 @@ cluster = SLURMCluster(
 print(cluster.job_script())
 
 client = Client(cluster)
-futures = [client.submit(train_dense_model, (None, False) ]
+futures = client.submit(train_dense_model, (None, False))
 _ = client.gather(futures)
 
 print('Shutting down dask workers')
