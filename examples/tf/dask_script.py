@@ -56,11 +56,11 @@ def launch_dask_tasks(n_gpus, save):
         # function to execute
         train_dense_model,
         # *args
-        None, save,
+        str(i_gpu), save,
         # this function has potential side effects
         pure=not save,
         resources={'GPU': 1},
-    ) for _ in range(n_gpus)]
+    ) for i_gpu in range(n_gpus)]
     job_result = client.gather(futures)
     if all(job_result):
         print('All jobs finished without errors')
