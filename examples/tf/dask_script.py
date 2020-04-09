@@ -38,6 +38,9 @@ futures = client.submit(
     pure=not save,
     resources={'GPU': 1},
 )
-_ = client.gather(futures)
-
+job_result = client.gather(futures)
+if job_result:
+    print('Job finished without errors')
+else:
+    print('Job errored out')
 print('Shutting down dask workers')

@@ -62,6 +62,7 @@ def train_dense_model(cuda_visible_devices, save):
     # saving
     if save:
         model.save(os.environ['SCRATCH'])
+    return True
 
 if __name__ == '__main__':
     train_dense_model_click()
