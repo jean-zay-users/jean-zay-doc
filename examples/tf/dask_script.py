@@ -8,7 +8,7 @@ cluster = SLURMCluster(
     cores=1,
     job_cpu=10,
     memory='10GB',
-    job_name='dask_mnist_tf_multi_gpu_example',
+    job_name='dask_mnist_tf_example',
     walltime='1:00:00',
     interface='ib0',
     job_extra=[
@@ -21,13 +21,23 @@ cluster = SLURMCluster(
     env_extra=[
         'module purge',
         'module load tensorflow-gpu/py3/2.1.0',
-    ]
+    ],
+    extra=['--resources GPU=1'],
 )
 
 print(cluster.job_script())
 
 client = Client(cluster)
-futures = client.submit(train_dense_model, (None, False))
+save = False
+futures = client.submit(
+    # function to execute
+    train_dense_model,
+    # *args
+    None, False,
+    # this function has potential side effects
+    pure=not save,
+    resources={'GPU': 1},
+)
 _ = client.gather(futures)
 
 print('Shutting down dask workers')
