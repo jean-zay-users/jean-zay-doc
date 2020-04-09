@@ -32,7 +32,7 @@ def launch_dask_tasks(n_gpus, save):
         walltime='1:00:00',
         interface='ib0',
         job_extra=[
-            '--gres=gpu:{n_gpus}',
+            f'--gres=gpu:{n_gpus}',
             '--qos=qos_gpu-dev',
             '--distribution=block:block',
             '--hint=nomultithread',
