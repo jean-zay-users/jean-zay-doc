@@ -20,6 +20,10 @@ from tensorflow.keras import layers
     is_flag=True,
     help='Whether you want to save the model or not',
 )
+def train_dense_model_click(cuda_visible_devices, save):
+    return train_dense_model(cuda_visible_devices, save)
+
+
 def train_dense_model(cuda_visible_devices, save):
     if cuda_visible_devices is not None:
         os.environ['CUDA_VISIBLE_DEVICES'] = cuda_visible_devices
@@ -57,4 +61,4 @@ def train_dense_model(cuda_visible_devices, save):
         model.save(os.environ['SCRATCH'])
 
 if __name__ == '__main__':
-    train_dense_model()
+    train_dense_model_click()
