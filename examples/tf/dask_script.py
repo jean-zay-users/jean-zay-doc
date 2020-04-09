@@ -25,7 +25,7 @@ def launch_dask_tasks(n_gpus, save):
 
     job_name = 'dask_mnist_tf_example'
     if n_gpus > 1:
-        job_name += 'multi_gpu'
+        job_name += '_multi_gpus'
 
     cluster = SLURMCluster(
         n_workers=n_gpus,
