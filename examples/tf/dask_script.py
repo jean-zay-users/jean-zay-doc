@@ -23,12 +23,16 @@ from mnist_example import train_dense_model
 def launch_dask_tasks(n_gpus, save):
     assert 0 < n_gpus < 5, 'You need to request between 1 and 4 GPUs.'
 
+    job_name = 'dask_mnist_tf_example'
+    if n_gpus > 1:
+        job_name += 'multi_gpu'
+
     cluster = SLURMCluster(
-        n_workers=4,
-        cores=4,
+        n_workers=n_gpus,
+        cores=n_gpus,
         job_cpu=10,
         memory='10GB',
-        job_name='dask_mnist_tf_example',
+        job_name=job_name,
         walltime='1:00:00',
         interface='ib0',
         job_extra=[
@@ -42,7 +46,7 @@ def launch_dask_tasks(n_gpus, save):
             'module purge',
             'module load tensorflow-gpu/py3/2.1.0',
         ],
-        extra=['--resources GPU=4'],
+        extra=[f'--resources GPU={n_gpus}'],
     )
 
     print(cluster.job_script())
