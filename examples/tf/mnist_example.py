@@ -1,10 +1,6 @@
 # all taken from https://www.tensorflow.org/guide/keras/functional
-import os
-
 import click
-import tensorflow as tf
-from tensorflow import keras
-from tensorflow.keras import layers
+
 
 @click.command()
 @click.option(
@@ -25,7 +21,14 @@ def train_dense_model_click(cuda_visible_devices, save):
 
 
 def train_dense_model(cuda_visible_devices, save):
+    # limit imports oustide the call to the function, in order to launch quickly
+    # when using dask
+    import tensorflow as tf
+    from tensorflow import keras
+    from tensorflow.keras import layers
+
     if cuda_visible_devices is not None:
+        import os
         os.environ['CUDA_VISIBLE_DEVICES'] = cuda_visible_devices
     # model building
     tf.keras.backend.clear_session()  # For easy reset of notebook state.
