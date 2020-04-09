@@ -28,15 +28,14 @@ def launch_dask_tasks(n_gpus, save):
         job_name += '_multi_gpus'
 
     cluster = SLURMCluster(
-        n_workers=n_gpus,
-        cores=n_gpus,
+        cores=1,
         job_cpu=10,
         memory='10GB',
         job_name=job_name,
         walltime='1:00:00',
         interface='ib0',
         job_extra=[
-            f'--gres=gpu:{n_gpus}',
+            f'--gres=gpu:1',
             '--qos=qos_gpu-dev',
             '--distribution=block:block',
             '--hint=nomultithread',
@@ -46,9 +45,8 @@ def launch_dask_tasks(n_gpus, save):
             'module purge',
             'module load tensorflow-gpu/py3/2.1.0',
         ],
-        extra=[f'--resources GPU={n_gpus}'],
     )
-
+    cluster.scale(n_gpus)
     print(cluster.job_script())
 
     client = Client(cluster)
@@ -56,10 +54,9 @@ def launch_dask_tasks(n_gpus, save):
         # function to execute
         train_dense_model,
         # *args
-        str(i_gpu), save,
+        None, save,
         # this function has potential side effects
         pure=not save,
-        resources={'GPU': 1},
     ) for i_gpu in range(n_gpus)]
     job_result = client.gather(futures)
     if all(job_result):
