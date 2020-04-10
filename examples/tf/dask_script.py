@@ -7,25 +7,22 @@ from mnist_example import train_dense_model
 
 @click.command()
 @click.option(
-    'n_gpus',
-    '-n',
-    default=1,
-    help='The number of GPUs on which to run the mnist examples in parallel. Defaults to 1.',
-    type=int,
-)
-@click.option(
     'save',
     '-s',
     '--save',
     is_flag=True,
     help='Whether you want to save the models or not',
 )
-def launch_dask_tasks(n_gpus, save):
-    assert 0 < n_gpus < 5, 'You need to request between 1 and 4 GPUs.'
-
+@click.option(
+    'batch_sizes',
+    '-b',
+    nargs=-1,
+    default=64,
+    help='The batch sizes you want to try out for the training. Defaults to 64.',
+    type=int,
+)
+def launch_dask_tasks(save, batch_sizes):
     job_name = 'dask_mnist_tf_example'
-    if n_gpus > 1:
-        job_name += '_multi_gpus'
 
     cluster = SLURMCluster(
         cores=1,
@@ -46,8 +43,7 @@ def launch_dask_tasks(n_gpus, save):
             'module load tensorflow-gpu/py3/2.1.0',
         ],
     )
-    n_jobs = n_gpus  # here the number of jobs is the same as the number of GPUs
-    # but it's not necesarily the case.
+    n_jobs = len(batch_sizes)
     cluster.scale(jobs=n_jobs)
     print(cluster.job_script())
 
@@ -56,10 +52,10 @@ def launch_dask_tasks(n_gpus, save):
         # function to execute
         train_dense_model,
         # *args
-        None, save,
+        None, save, batch_size,
         # this function has potential side effects
         pure=not save,
-    ) for i_job in range(n_jobs)]
+    ) for batch_size in batch_sizes]
     job_result = client.gather(futures)
     if all(job_result):
         print('All jobs finished without errors')

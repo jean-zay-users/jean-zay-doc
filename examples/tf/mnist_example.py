@@ -17,10 +17,10 @@ import click
     help='Whether you want to save the model or not',
 )
 def train_dense_model_click(cuda_visible_devices, save):
-    return train_dense_model(cuda_visible_devices, save)
+    return train_dense_model(cuda_visible_devices, save, batch_size=64)
 
 
-def train_dense_model(cuda_visible_devices, save):
+def train_dense_model(cuda_visible_devices, save, batch_size):
     # limit imports oustide the call to the function, in order to launch quickly
     # when using dask
     import tensorflow as tf
@@ -52,7 +52,7 @@ def train_dense_model(cuda_visible_devices, save):
                   optimizer=keras.optimizers.RMSprop(),
                   metrics=['accuracy'])
     history = model.fit(x_train, y_train,
-                        batch_size=64,
+                        batch_size=batch_size,
                         epochs=5,
                         validation_split=0.2)
     test_scores = model.evaluate(x_test, y_test, verbose=2)
