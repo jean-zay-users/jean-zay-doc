@@ -35,12 +35,20 @@ Your can use `srun` to launch an interactive job.
 For example, if you want to use a node with 4 GPUs during 1
 hour, you can type:
 ```
-srun --ntasks=1 --gres=gpu:4 --time=01:00:00 --pty bash -i
+srun --ntasks=1 --cpus-per-task=40 --gres=gpu:4 --time=01:00:00 --qos=qos_gpu-dev --pty bash -i
 ```
 
 Now, you have a brand new shell on a compute node where you can run your scripts interactively
 during 1h.
 
+### How to connect to the node of a launched GPU job
+
+To connect to the node of a launched GPU job you need to make sure that you don't ask for any GPU.
+This comes at the cost of not being able to monitor the GPU.
+
+```
+srun --jobid <job-id> --gres=gpu:0 --ntasks=1 --pty bash
+```
 
 ## Miscellaneous
 
