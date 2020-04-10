@@ -9,7 +9,6 @@ from mnist_example import train_dense_model
 @click.argument(
     'batch_sizes',
     nargs=-1,
-    help='The batch sizes you want to try out for the training. Defaults to 64.',
     type=int,
 )
 @click.option(
