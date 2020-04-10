@@ -34,5 +34,8 @@ pip install click dask-jobqueue
 
 You can then do:
 ```
-python jean-zay-doc/examples/tf/dask_script.py
+python jean-zay-doc/examples/tf/dask_script.py 64
 ```
+
+where 64 is the batch size you want to run the mnist example with.
+If you want multiple batch sizes just have them space-separated.
