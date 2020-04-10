@@ -6,6 +6,12 @@ from mnist_example import train_dense_model
 
 
 @click.command()
+@click.argument(
+    'batch_sizes',
+    nargs=-1,
+    help='The batch sizes you want to try out for the training. Defaults to 64.',
+    type=int,
+)
 @click.option(
     'save',
     '-s',
@@ -13,15 +19,7 @@ from mnist_example import train_dense_model
     is_flag=True,
     help='Whether you want to save the models or not',
 )
-@click.option(
-    'batch_sizes',
-    '-b',
-    nargs=-1,
-    default=64,
-    help='The batch sizes you want to try out for the training. Defaults to 64.',
-    type=int,
-)
-def launch_dask_tasks(save, batch_sizes):
+def launch_dask_tasks(batch_sizes, save):
     job_name = 'dask_mnist_tf_example'
 
     cluster = SLURMCluster(
