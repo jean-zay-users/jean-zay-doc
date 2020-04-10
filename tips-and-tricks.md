@@ -45,6 +45,7 @@ during 1h.
 
 To connect to the node of a launched GPU job you need to make sure that you don't ask for any GPU.
 This comes at the cost of not being able to monitor the GPU.
+However, you could use this to typically monitor manually the RAM via `htop` or inspect some temporary files.
 
 ```
 srun --jobid <job-id> --gres=gpu:0 --ntasks=1 --pty bash
