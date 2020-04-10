@@ -46,7 +46,9 @@ def launch_dask_tasks(n_gpus, save):
             'module load tensorflow-gpu/py3/2.1.0',
         ],
     )
-    cluster.scale(n_gpus)
+    n_jobs = n_gpus  # here the number of jobs is the same as the number of GPUs
+    # but it's not necesarily the case.
+    cluster.scale(jobs=n_jobs)
     print(cluster.job_script())
 
     client = Client(cluster)
@@ -57,7 +59,7 @@ def launch_dask_tasks(n_gpus, save):
         None, save,
         # this function has potential side effects
         pure=not save,
-    ) for i_gpu in range(n_gpus)]
+    ) for i_job in range(n_jobs)]
     job_result = client.gather(futures)
     if all(job_result):
         print('All jobs finished without errors')
