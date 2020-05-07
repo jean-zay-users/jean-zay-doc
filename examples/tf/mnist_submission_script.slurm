@@ -10,7 +10,7 @@
 #SBATCH --time=3:00:00              # maximum execution time (HH:MM:SS)
 #SBATCH --output=tf_mnist%j.out # output file name
 #SBATCH --error=tf_mnist%j.out  # error file name
-#SBATCH --qos=qos_gpu-t4         # we are submitting a test job
+#SBATCH --qos=qos_gpu-dev         # we are submitting a test job
 
 set -x
 cd $WORK/jean-zay-doc/examples/tf
