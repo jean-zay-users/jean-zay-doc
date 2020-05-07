@@ -35,10 +35,6 @@ def launch_dask_tasks(batch_sizes, save):
             '--hint=nomultithread',
             '--output=%x_%j.out',
         ],
-        env_extra=[
-            'module purge',
-            'module load tensorflow-gpu/py3/2.1.0',
-        ],
     )
     n_jobs = len(batch_sizes)
     cluster.scale(jobs=n_jobs)
