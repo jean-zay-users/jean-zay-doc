@@ -15,10 +15,10 @@
 set -x
 cd $WORK/jean-zay-doc/examples/tf
 
-# no particular option here but you could imagine it being different parameters
-# for example something like:
-# opt[0]="first-value"
-# opt[1]="second-value"
+# no particular option here but you could imagine it being different parameters,
+# for example for running two jobs with differente learning rates (0.1 and 1):
+# opt[0]="0.1"
+# opt[1]="1"
 opt[0]=""
 opt[1]=""
 
