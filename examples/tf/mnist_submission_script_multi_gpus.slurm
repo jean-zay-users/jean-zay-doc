@@ -10,12 +10,15 @@
 #SBATCH --time=3:00:00              # maximum execution time (HH:MM:SS)
 #SBATCH --output=tf_mnist_multi_gpus%A_%a.out # output file name
 #SBATCH --error=tf_mnist_multi_gpus%A_%a.out  # error file name
-#SBATCH --array=0-1            # 2 jobs
+#SBATCH --array=0-1            # one job array with 2 jobs
 
 set -x
 cd $WORK/jean-zay-doc/examples/tf
 
 # no particular option here but you could imagine it being different parameters
+# for example something like:
+# opt[0]="first-value"
+# opt[1]="second-value"
 opt[0]=""
 opt[1]=""
 
