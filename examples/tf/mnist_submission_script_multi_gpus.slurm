@@ -11,6 +11,7 @@
 #SBATCH --output=tf_mnist_multi_gpus%A_%a.out # output file name
 #SBATCH --error=tf_mnist_multi_gpus%A_%a.out  # error file name
 #SBATCH --array=0-1            # one job array with 2 jobs
+#SBATCH --qos=qos_gpu-dev         # we are submitting a test job
 
 set -x
 cd $WORK/jean-zay-doc/examples/tf
