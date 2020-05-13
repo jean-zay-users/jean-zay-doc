@@ -118,6 +118,12 @@ a week.
 - Count 2-3 days after the email to actually be able to access Jean Zay. Some
   time is needed for the IP address to be added to Jean Zay.
 
+
+## How to add additionnal IP addresses
+
+To add additionnal IP addresses to those mentioned on your original declaration, you should fill the "Ajout, modification ou suppression de machines" table on page 2 of [this sheet](http://www.idris.fr/media/data/formulaires/fgc.pdf) and have it signed by your "Responsable sécurité informatique". Once it's done, you just have to e-mail it gestutil@idris.fr. This procedure should take 3-4 days.
+
+
 # How to write a project proposal (only needed if you request more than 10k GPU hours)
 
 *Estimate of the time needed: 1h (write a project) + a few days/weeks
