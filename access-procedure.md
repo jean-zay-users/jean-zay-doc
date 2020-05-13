@@ -122,14 +122,14 @@ a week.
 ## How to add additionnal IP addresses to your authorised IP addresses
 
 *Estimate of the time needed: 15 minutes (fill the form) + 1-2 days (figure out
-the right person to sign the form and get him/her to sign it). + 3-4 days
+the right person to sign the form and get him/her to sign it). + 1-2 days
 (until the change actually takes effect on the IDRIS side)*
 
 To add additionnal IP addresses to those mentioned on your original declaration:
 - fill the "Ajout, modification ou suppression de machines" table on page 2 of
   [this pdf document](http://www.idris.fr/media/data/formulaires/fgc.pdf#page=2)
 - have it signed by your "Responsable sécurité informatique".
-- e-mail the signed form to gestutil@idris.fr and wait 3-4 days until the change
+- e-mail the signed form to gestutil@idris.fr and wait 1-2 days until the change
   actually takes effect.
 
 # How to write a project proposal (only needed if you request more than 10k GPU hours)
