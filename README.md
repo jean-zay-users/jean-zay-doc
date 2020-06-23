@@ -46,7 +46,7 @@ the Jean Zay cluster, e.g.:
 
 # Useful links
 
-Jean Zay doc for AI users (French only for now): http://www.idris.fr/ia
+Jean Zay doc targeted towards AI users: http://www.idris.fr/eng/ia/index.html
 
 Hardware: http://www.idris.fr/eng/jean-zay/cpu/jean-zay-cpu-hw-eng.html
 
