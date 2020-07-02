@@ -104,6 +104,33 @@ When you finish filling out this part, you should see something like this:
 validate your information:
 <img src="./img/computing-account-validate.png" width="60%" style="display: block"/>
 
+
+## Optional (skip this if you are French)
+
+The direction of IDRIS will most likely require an additional security
+authorization. You will have to fill a form with basic information about
+yourself (name, address, date and place of birth) and about the project you
+will be working on: where you will be working from, where your financing comes
+from (e.g. Inria, a project grant, etc ...), and a description of your project.
+
+The project description comes in two parts:
+- A short description (can be the same as the one used in your declaration on
+  Edari) embedded in the form you will receive.
+- A more detailed description to attach in PDF. A one-page file with half
+  description / half bibliography should be enough. You will also be asked to
+  attach a CV. It must include everything you did after you obtained your last
+  degree. Every blank should be explicitly stated. For example, if you had a
+  one month break, you should specify this month on your CV and state « No
+  employment » next to it.
+
+After everything is submitted, you should receive an e-mail saying it will take
+between 1 and 2 months (In practice it took 2.5 months). Do not hesitate to
+send them an email if you don't here from them maybe after 1 month the first
+time, and then every two weeks until you manage to get through the security
+background checks (fix this part if you have better recommendations).
+
+Once this step is complete, the regular procedure applies.
+
 ## IDRIS email with login and password
 
 In principle, you should receive a "Ouverture de votre compte" email from IDRIS
@@ -117,6 +144,20 @@ a week.
   password.
 - Count 2-3 days after the email to actually be able to access Jean Zay. Some
   time is needed for the IP address to be added to Jean Zay.
+
+
+## How to add additionnal IP addresses to your authorised IP addresses
+
+*Estimate of the time needed: 15 minutes (fill the form) + 1-2 days (figure out
+the right person to sign the form and get him/her to sign it). + 1-2 days
+(until the change actually takes effect on the IDRIS side)*
+
+To add additionnal IP addresses to those mentioned on your original declaration:
+- fill the "Ajout, modification ou suppression de machines" table on page 2 of
+  [this pdf document](http://www.idris.fr/media/data/formulaires/fgc.pdf#page=2)
+- have it signed by your "Responsable sécurité informatique".
+- e-mail the signed form to gestutil@idris.fr and wait 1-2 days until the change
+  actually takes effect.
 
 # How to write a project proposal (only needed if you request more than 10k GPU hours)
 

@@ -1,10 +1,6 @@
 # all taken from https://www.tensorflow.org/guide/keras/functional
-import os
-
 import click
-import tensorflow as tf
-from tensorflow import keras
-from tensorflow.keras import layers
+
 
 @click.command()
 @click.option(
@@ -20,8 +16,19 @@ from tensorflow.keras import layers
     is_flag=True,
     help='Whether you want to save the model or not',
 )
-def train_dense_model(cuda_visible_devices, save):
+def train_dense_model_click(cuda_visible_devices, save):
+    return train_dense_model(cuda_visible_devices, save, batch_size=64)
+
+
+def train_dense_model(cuda_visible_devices, save, batch_size):
+    # limit imports oustide the call to the function, in order to launch quickly
+    # when using dask
+    import tensorflow as tf
+    from tensorflow import keras
+    from tensorflow.keras import layers
+
     if cuda_visible_devices is not None:
+        import os
         os.environ['CUDA_VISIBLE_DEVICES'] = cuda_visible_devices
     # model building
     tf.keras.backend.clear_session()  # For easy reset of notebook state.
@@ -45,7 +52,7 @@ def train_dense_model(cuda_visible_devices, save):
                   optimizer=keras.optimizers.RMSprop(),
                   metrics=['accuracy'])
     history = model.fit(x_train, y_train,
-                        batch_size=64,
+                        batch_size=batch_size,
                         epochs=5,
                         validation_split=0.2)
     test_scores = model.evaluate(x_test, y_test, verbose=2)
@@ -55,6 +62,7 @@ def train_dense_model(cuda_visible_devices, save):
     # saving
     if save:
         model.save(os.environ['SCRATCH'])
+    return True
 
 if __name__ == '__main__':
-    train_dense_model()
+    train_dense_model_click()
