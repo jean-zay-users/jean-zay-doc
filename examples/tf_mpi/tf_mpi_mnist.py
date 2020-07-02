@@ -22,6 +22,18 @@ import argparse
 
 from tensorflow import keras
 
+import gzip
+from os.path import join
+
+dir_path = join(os.environ['DSDIR'],'MNIST','raw')
+
+filename = [
+    ["training_images",join(dir_path, "train-images-idx3-ubyte.gz")],
+    ["test_images",join(dir_path, "t10k-images-idx3-ubyte.gz")],
+    ["training_labels",join(dir_path, "train-labels-idx1-ubyte.gz")],
+    ["test_labels",join(dir_path, "t10k-labels-idx1-ubyte.gz")]
+    ]
+
 layers = tf.layers
 
 tf.logging.set_verbosity(tf.logging.INFO)
@@ -30,6 +42,16 @@ tf.logging.set_verbosity(tf.logging.INFO)
 parser = argparse.ArgumentParser(description='Tensorflow MNIST Example')
 parser.add_argument('--mnist', help='location of mnist.npz', required=True)
 args = parser.parse_args()
+
+def load_mnist():
+    mnist = {}
+    for name in filename[:2]:
+        with gzip.open(name[1], 'rb') as f:
+            mnist[name[0]] = np.frombuffer(f.read(), np.uint8, offset=16).reshape(-1,28*28)
+    for name in filename[-2:]:
+        with gzip.open(name[1], 'rb') as f:
+            mnist[name[0]] = np.frombuffer(f.read(), np.uint8, offset=8)
+    return  mnist
 
 def conv_model(feature, target, mode):
     """2-layer convolution model."""
@@ -85,8 +107,12 @@ def main(_):
     # Horovod: initialize Horovod.
     hvd.init()
 
-    # Download and load MNIST dataset.
-    (x_train, y_train), (x_test, y_test) = keras.datasets.mnist.load_data(args.mnist)
+    # Load MNIST dataset.
+    dataset=load_mnist()
+    x_train = dataset[filename[0][0]].reshape((60000, 28, 28))
+    y_train = dataset[filename[2][0]].reshape((60000))
+    x_test = dataset[filename[1][0]].reshape((10000, 28, 28))
+    y_test = dataset[filename[3][0]].reshape((10000))
 
     # The shape of downloaded data is (-1, 28, 28), hence we need to reshape it
     # into (-1, 784) to feed into our network. Also, need to normalize the

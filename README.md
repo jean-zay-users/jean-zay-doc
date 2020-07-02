@@ -27,8 +27,8 @@ We use gitter for chat, don't hesitate to get involved
   it.
 - [Tips and tricks](./tips-and-tricks.md)
 - [Limitations](./limitations.md)
-- Example scripts: [PyTorch examples](./examples/pytorch) and [Tensorflow
-  examples](./examples/tf).
+- Example scripts: [PyTorch examples](./examples/pytorch), [Tensorflow
+  examples](./examples/tf), [Tensorflow MPI distributed examples](.examples/tf_mpi/).
 
 In the medium term, more material could be added to discuss tips and tricks,
 limitations, work-arounds, etc ... on Jean Zay. In particular, feel free to
@@ -54,7 +54,6 @@ Doc: http://www.idris.fr/eng/jean-zay/
 
 Doc in French (more accurate sometimes): http://www.idris.fr/jean-zay/
 
-Email for Jean Zay user support: [assist@idris.fr](mailto:assist@idris.fr).
 
 Gitter chat: [https://gitter.im/jean-zay-users/jean-zay-doc](https://gitter.im/jean-zay-users/jean-zay-doc)
 
