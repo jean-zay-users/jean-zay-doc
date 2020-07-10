@@ -19,7 +19,8 @@ is detailed in the sections below.
 
 1. Create an [EDARI account](https://www.edari.fr/user/register) (simple
    personal details). See [this](#edari-account-administrative-account)
-   for all the details about this step.
+   for all the details about this step. WARNING: PhD students should select the option
+   "Membre non permanent sauf doctorant, post-doctorant et étudiant en stage de master 2"
 2. Fill a form about your project (**"Déclaration de dossier"**). Hardest part is
    to figure out who your "Directeur de la structure de recherche" is and to
    have the form signed by him/her. You also need to write a few lines about
