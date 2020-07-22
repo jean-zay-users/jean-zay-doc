@@ -235,6 +235,7 @@ def run(batch_size: int,
 
     # set environment variables for 'env://'
     os.environ['MASTER_ADDR'] = master_addr
+    os.environ['MASTER_PORT'] = str(29500)
     os.environ['WORLD_SIZE'] = str(world_size)
     os.environ['RANK'] = str(global_rank)
 
