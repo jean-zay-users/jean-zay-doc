@@ -289,8 +289,8 @@ def run(batch_size: int,
                               std=[0.229, 0.224, 0.225])])
 
     # Initialize Datasets.
-    trainset = datasets.STL10(root=os.environ["SCRATCH"], split='train', download=False, transform=transform)
-    valset = datasets.STL10(root=os.environ["SCRATCH"], split='test', download=False, transform=transform)
+    trainset = datasets.STL10(root=os.environ["DSDIR"], split='train', download=False, transform=transform)
+    valset = datasets.STL10(root=os.environ["DSDIR"], split='test', download=False, transform=transform)
 
     # Create DistributedSampler to handle distributing the dataset across nodes
     # This can only be called after torch.distributed.init_process_group is called
