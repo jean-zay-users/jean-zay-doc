@@ -13,4 +13,7 @@ on the Jean Zay infrastructure using **Slurm Batch** and **Slurm Job Array**.
 
 ## Distributed STL10
 
+In this tutorial you will learn to train a *ResNet18* in a distributed setting (multi GPU and multi node) on 
+the Jean Zay infrastructure using **Slurm srun**. 
+
 
