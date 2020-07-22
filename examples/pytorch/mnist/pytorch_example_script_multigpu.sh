@@ -12,7 +12,7 @@
 #SBATCH --array=1-10
 
 
-cd $WORK/jean-zay-doc/examples/pytorch
+cd $WORK/jean-zay-doc/examples/pytorch/mnist
 
 module purge
 module load pytorch-gpu/py3/1.4.0 

@@ -1,5 +1,11 @@
 # PyTorch examples
 
+To run these scripts you will need to clone the jean-zay repo in your `$WORK` dir:
+```
+cd $WORK &&\
+git clone https://github.com/jean-zay-users/jean-zay-doc.git
+```
+
 ## MNIST
 
 In this tutorial you will learn to train a *basic CNN model* and tune its hyperparameters
