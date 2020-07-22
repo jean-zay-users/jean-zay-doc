@@ -1,8 +1,9 @@
 import os
 import time
-import subprocess
 import torch
+import socket
 import argparse
+import subprocess
 
 import torch.nn as nn
 import torch.distributed as dist
@@ -138,7 +139,7 @@ def train(train_loader: DataLoader,
                     f"Epoch: [{epoch}][{i}/{len(train_loader)}]\t"
                     f"Time {batch_time.val:.3f} ({batch_time.avg:.3f})\t"
                     f"Speed {world_size * batch_size / batch_time.val:.3f} ({world_size * batch_size / batch_time.avg:.3f})\t"
-                    f"Loss {loss.val:.10f} ({loss.avg:.4f})\t"
+                    f"Loss {losses.val:.10f} ({losses.avg:.4f})\t"
                     f"Prec@1 {top1.val:.3f} ({top1.avg:.3f})\t"
                     f"Prec@5 {top5.val:.3f} ({top5.avg:.3f})"
                 )
@@ -203,7 +204,7 @@ def validate(val_loader: DataLoader,
                     f"Test: [{i}/{len(val_loader)}]\t"
                     f"Time {batch_time.val:.3f} ({batch_time.avg:.3f})\t"
                     f"Speed {world_size * batch_size / batch_time.val:.3f} ({world_size * batch_size / batch_time.avg:.3f})\t"
-                    f"Loss {loss.val:.10f} ({loss.avg:.4f})\t"
+                    f"Loss {losses.val:.10f} ({losses.avg:.4f})\t"
                     f"Prec@1 {top1.val:.3f} ({top1.avg:.3f})\t"
                     f"Prec@5 {top5.val:.3f} ({top5.avg:.3f})"
                 )
@@ -220,14 +221,16 @@ def run(batch_size: int,
         log_interval: int,
         save_model: bool):
     # number of nodes / node ID
+    n_nodes = int(os.environ['SLURM_JOB_NUM_NODES'])
     node_id = int(os.environ['SLURM_NODEID'])
 
     # local rank on the current node / global rank
     local_rank = int(os.environ['SLURM_LOCALID'])
     global_rank = int(os.environ['SLURM_PROCID'])
 
-    # number of processes
+    # number of processes / GPUs per node
     world_size = int(os.environ['SLURM_NTASKS'])
+    n_gpu_per_node = world_size // n_nodes
 
     # define master address and master port
     hostnames = subprocess.check_output(['scontrol', 'show', 'hostnames', os.environ['SLURM_JOB_NODELIST']])
@@ -239,8 +242,23 @@ def run(batch_size: int,
     os.environ['WORLD_SIZE'] = str(world_size)
     os.environ['RANK'] = str(global_rank)
 
-    # define whether this is the master process
+    # define whether this is the master process / if we are in distributed mode
     is_master = node_id == 0 and local_rank == 0
+    multi_node = n_nodes > 1
+    multi_gpu = world_size > 1
+
+    # summary
+    PREFIX = "%i - " % global_rank
+    print(PREFIX + "Number of nodes: %i" % n_nodes)
+    print(PREFIX + "Node ID        : %i" % node_id)
+    print(PREFIX + "Local rank     : %i" % local_rank)
+    print(PREFIX + "Global rank    : %i" % global_rank)
+    print(PREFIX + "World size     : %i" % world_size)
+    print(PREFIX + "GPUs per node  : %i" % n_gpu_per_node)
+    print(PREFIX + "Master         : %s" % str(is_master))
+    print(PREFIX + "Multi-node     : %s" % str(multi_node))
+    print(PREFIX + "Multi-GPU      : %s" % str(multi_gpu))
+    print(PREFIX + "Hostname       : %s" % socket.gethostname())
 
     # set GPU device
     torch.cuda.set_device(local_rank)
