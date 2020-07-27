@@ -51,6 +51,75 @@ However, you could use this to typically monitor manually the RAM via `htop` or 
 srun --jobid <job-id> --gres=gpu:0 --ntasks=1 --pty bash
 ```
 
+### Auto Requeue on timeouts
+
+Sometimes you want your script to run longer than the maximum walltime of a particular Slurm queue, for example
+if you want to train a model for more than 1 day on the `gpu_p1` queue or more than 5 days on the `gpu_p2` queue.
+One work-around for this use case is to take a snapshot of your model regularly and automatically relaunch a job 
+(and start from this snapshot) once it reaches the maximum walltime limit.
+
+It is possible to ask Slurm to send a signal before the job timeouts, handle it in Python and automatically
+requeue a similar job.
+
+You need to add the following to your Slurm shell: 
+
+```bash
+#SBATCH --signal=USR1@20   # asks SLURM to send the USR1 signal 20 seconds before end of the time limit
+```
+
+And handle the signal in Python:
+
+```python
+import os
+import socket
+import signal
+import sys
+import logging
+
+from pathlib import Path
+
+logger = logging.getLogger(__name__)
+
+def sig_handler(signum, frame):
+    logger.warning("Signal handler called with signal " + str(signum))
+    prod_id = int(os.environ['SLURM_PROCID'])
+    logger.warning("Host: %s - Global rank: %i" % (socket.gethostname(), prod_id))
+    if prod_id == 0:
+        logger.warning("Requeuing job " + os.environ['SLURM_JOB_ID'])
+        os.system('scontrol requeue ' + os.environ['SLURM_JOB_ID'])
+    else:
+        logger.warning("Not the master process, no need to requeue.")
+    sys.exit(-1)
+
+
+def init_signal_handler():
+    """
+    Handle signals sent by SLURM for time limit.
+    """
+    signal.signal(signal.SIGUSR1, sig_handler)
+    logger.warning("Signal handler installed.")
+
+...
+# In main
+
+# Makes sure that we start from where we ended in the previous job
+checkpoint = Path("my_job.pt")
+if checkpoint.exists():
+    load(checkpoint)
+
+init_signal_handler()
+
+for _ in range(epochs):
+    ...
+    save(checkpoint)
+
+```
+
+#### CAUTION:
+
+Remember to also add a serialization logic to your objects to make sure your new job start from where your
+previous job ended. In the above case, we will restart from the previous epoch checkpoint.
+
 ## Miscellaneous
 
 ### Managing your data and the storage spaces
