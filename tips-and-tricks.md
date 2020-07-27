@@ -53,8 +53,11 @@ srun --jobid <job-id> --gres=gpu:0 --ntasks=1 --pty bash
 
 ### Auto Requeue on timeouts
 
-Depending on the Quality of Service (QoS) you launch your job with, your job might run into the time limit 
-and end before completion.
+Sometimes you want your script to run longer than the maximum walltime of a particular Slurm queue, for example
+if you want to train a model for more than 1 day on the `gpu_p1` queue or more than 5 days on the `gpu_p2` queue.
+One work-around for this use case is to take a snapshot of your model regularly and automatically relaunch a job 
+(and start from this snapshot) once it reaches the maximum walltime limit.
+
 It is possible to ask Slurm to send a signal before the job timeouts, handle it in Python and automatically
 requeue a similar job.
 
