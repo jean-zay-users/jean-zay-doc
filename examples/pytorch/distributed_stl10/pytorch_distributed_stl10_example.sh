@@ -10,7 +10,7 @@
 #SBATCH --error=pytorch_stl10%j.err  # error file name
 
 set -x
-cd $WORK/jean-zay-doc/examples/pytorch/distributed_stl10
+cd ${SLURM_SUBMIT_DIR}
 
 module purge
 module load pytorch-gpu/py3/1.5.0
