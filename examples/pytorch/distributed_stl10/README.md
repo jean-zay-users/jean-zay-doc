@@ -53,7 +53,7 @@ And this one will use two entire nodes (4 GPUs per node on the default Slurm par
 #SBATCH --error=pytorch_stl10%j.err  # error file name
 ```
 
-You can launch then launch the job with:
+You can then launch the job with:
 ```
 cd jean-zay-doc/examples/pytorch/distributed_stl10/
 sbatch ./pytorch_distributed_stl10_example.sh
