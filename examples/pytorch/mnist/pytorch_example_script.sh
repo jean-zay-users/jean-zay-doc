@@ -11,7 +11,7 @@
 #SBATCH --error=pytorch_mnist%j.err  # error file name
 
 set -x
-cd $WORK/jean-zay-doc/examples/pytorch/mnist
+cd ${SLURM_SUBMIT_DIR}
 
 module purge
 module load pytorch-gpu/py3/1.4.0 
