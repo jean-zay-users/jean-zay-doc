@@ -9,14 +9,11 @@
 #SBATCH --time=3:00:00              # maximum execution time (HH:MM:SS)
 #SBATCH --output=pytorch_mnist%j.out # output file name
 #SBATCH --error=pytorch_mnist%j.err  # error file name
-#SBATCH --array=1-10
 
-
-cd $WORK/jean-zay-doc/examples/pytorch
+set -x
+cd $WORK/jean-zay-doc/examples/pytorch/mnist
 
 module purge
 module load pytorch-gpu/py3/1.4.0 
 
-GAMMA_STEP=('0.1' '0.2' '0.3' '0.4' '0.5' '0.6' '0.7' '0.8' '0.9' '1.0') 
-python ./mnist_example.py --gamma ${GAMMA_STEP[$SLURM_ARRAY_TASK_ID]} &
-
+python ./mnist_example.py 
