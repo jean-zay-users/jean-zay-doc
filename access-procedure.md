@@ -127,7 +127,7 @@ The project description comes in two parts:
 
 After everything is submitted, you should receive an e-mail saying it will take
 between 1 and 2 months (In practice it took 2.5 months). Do not hesitate to
-send them an email if you don't here from them maybe after 1 month the first
+send them an email if you don't hear from them maybe after 1 month the first
 time, and then every two weeks until you manage to get through the security
 background checks (fix this part if you have better recommendations).
 
