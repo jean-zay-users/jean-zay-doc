@@ -17,7 +17,7 @@ Here we will focus on the easiest procedure to access Jean Zay, namely the
 developing AI algorithms. Here is a quick overview of the procedure. Each step
 is detailed in the sections below.
 
-1. Create an [EDARI account](https://www.edari.fr/user/register) (simple
+1. Create an [EDARI account](https://www.edari.fr/sp/login) (simple
    personal details). See [this](#edari-account-administrative-account)
    for all the details about this step.
 2. Fill a form about your project (**"Déclaration de dossier"**). Hardest part is
@@ -42,7 +42,9 @@ is detailed in the sections below.
 
 *Estimate of the time needed: 5 minutes*
 
-To create an EDARI account: https://www.edari.fr/user/register
+To create an EDARI account: https://www.edari.fr/sp/login (for a wide range of
+academic institutions through RENATER) or https://www.edari.fr/user/register
+(if you can not find your institution in the first link).
 
 In case something goes wrong:
 - Contact for EDARI account: https://www.edari.fr/contact
