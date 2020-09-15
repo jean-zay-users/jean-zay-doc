@@ -43,13 +43,11 @@ during 1h.
 
 ### How to connect to the node of a launched GPU job
 
-To connect to the node of a launched GPU job you need to make sure that you don't ask for any GPU.
-This comes at the cost of not being able to monitor the GPU.
-However, you could use this to typically monitor manually the RAM via `htop` or inspect some temporary files.
-
+You can directly connect to a node used by one of your jobs with SSH:
 ```
-srun --jobid <job-id> --gres=gpu:0 --ntasks=1 --pty bash
+ssh <nodeid>
 ```
+The `nodeid` is printed out when you launch the `squeue -u $USER` command.
 
 ### Auto Requeue on timeouts
 
