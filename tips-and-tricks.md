@@ -45,9 +45,19 @@ during 1h.
 
 You can directly connect to a node used by one of your jobs with SSH:
 ```
-ssh <nodeid>
+ssh node-name
 ```
-The `nodeid` is printed out when you launch the `squeue -u $USER` command.
+You can get the `node-name` information from the `squeue -u $USER` command. For example, `r7in10`
+or `jean-zay-ia816` are valid node names.
+
+If you don't have a job running on the node you will get an error like this:
+```
+Access denied by pam_slurm_adopt: you have no active jobs on this node
+Connection closed by 10.148.8.45 port 22
+```
+
+Caveat (September 2020) : if you have multiple jobs running on the same node it is not possible to
+specify which job you want to connect to.
 
 ### Auto Requeue on timeouts
 
