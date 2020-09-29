@@ -41,6 +41,21 @@ srun --ntasks=1 --cpus-per-task=40 --gres=gpu:4 --time=01:00:00 --qos=qos_gpu-de
 Now, you have a brand new shell on a compute node where you can run your scripts interactively
 during 1h.
 
+### Overview of cluster usage
+
+```
+sinfo -p gpu_p1,gpu_p2 -o"%P %.16F"
+```
+
+Output is something like this:
+```
+PARTITION   NODES(A/I/O/T)
+gpu_p1      258/0/2/260
+gpu_p2       15/16/0/31
+```
+
+A = allocated, I = idle, O = other, T = total
+
 ### How to connect to the node of a launched GPU job
 
 You can directly connect to a node used by one of your jobs with SSH:
@@ -58,6 +73,9 @@ Connection closed by 10.148.8.45 port 22
 
 Caveat (September 2020) : if you have multiple jobs running on the same node it is not possible to
 specify which job you want to connect to.
+
+Have a look at the [official doc](http://www.idris.fr/eng/jean-zay/jean-zay-connexion_ssh_noeud_calcul-eng.html)
+about this as well.
 
 ### Auto Requeue on timeouts
 
