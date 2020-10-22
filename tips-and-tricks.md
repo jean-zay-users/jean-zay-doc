@@ -219,4 +219,5 @@ git config --global credential.helper "cache --timeout=3600"
 
 If for some reason, you do absolutely need SSH access from Jean Zay to an
 outside server, you need to fill out this form:
-http://www.idris.fr/media/data/formulaires/fgc.pdf
+http://www.idris.fr/media/data/formulaires/fgc.pdf, mostly the section "Ajout,
+modification ou suppression de machines".
