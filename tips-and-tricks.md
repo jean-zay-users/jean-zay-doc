@@ -194,3 +194,29 @@ user <user-name>
 ```
 
 To connect to the jean-zay cluster you will then just need to do `ssh jz`.
+
+### Clone git repo
+
+SSH from Jean Zay going to the outside is very restricted. That means that if
+you are used to do
+```
+git clone git@my-institute-gitlab.fr:/my-organisation/my-repo.git
+```
+it will not work on Jean Zay (very likely it will time out after some time).
+
+Instead you should use HTTPS instead i.e. something like:
+```sh
+git clone https://my-institute-gitlab.fr:/my-organisation/my-repo.git
+```
+
+In order to avoid having to type your password too often (on each `git push`)
+you can set up password caching like this:
+```sh
+git config --global credential.helper cache
+# by default password is cached for 15 minutes but you can increase it if you want
+git config --global credential.helper "cache --timeout=3600"
+```
+
+If for some reason, you do absolutely need SSH access from Jean Zay to an
+outside server, you need to fill out this form:
+http://www.idris.fr/media/data/formulaires/fgc.pdf
