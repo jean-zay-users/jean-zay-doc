@@ -5,7 +5,8 @@
 ### Install miniconda (recommended solution if you are already familiar with conda)
 
 Install `miniconda` in `$WORK/miniconda3`:
-```sh
+
+```bash
 # download Miniconda installer
 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
 # install Miniconda
@@ -32,9 +33,9 @@ this doc!).
 
 Your can use `srun` to launch an interactive job.
 
-For example, if you want to use a node with 4 GPUs during 1
-hour, you can type:
-```
+For example, if you want to use a node with 4 GPUs during 1 hour, you can type:
+
+```bash
 srun --ntasks=1 --cpus-per-task=40 --gres=gpu:4 --time=01:00:00 --qos=qos_gpu-dev --pty bash -i
 ```
 
@@ -43,12 +44,13 @@ during 1h.
 
 ### Overview of cluster usage
 
-```
+```bash
 sinfo -p gpu_p1,gpu_p2 -o"%P %.16F"
 ```
 
 Output is something like this:
-```
+
+```bash
 PARTITION   NODES(A/I/O/T)
 gpu_p1      258/0/2/260
 gpu_p2       15/16/0/31
@@ -59,22 +61,25 @@ A = allocated, I = idle, O = other, T = total
 ### How to connect to the node of a launched GPU job
 
 You can directly connect to a node used by one of your jobs with SSH:
-```
+
+```bash
 ssh node-name
 ```
 You can get the `node-name` information from the `squeue -u $USER` command. For example, `r7in10`
 or `jean-zay-ia816` are valid node names.
 
 If you don't have a job running on the node you will get an error like this:
-```
+
+```bash
 Access denied by pam_slurm_adopt: you have no active jobs on this node
 Connection closed by 10.148.8.45 port 22
 ```
 
-Caveat (September 2020) : if you have multiple jobs running on the same node it is not possible to
-specify which job you want to connect to.
+Caveat (September 2020) : if you have multiple jobs running on the same node it
+is not possible to specify which job you want to connect to.
 
-Have a look at the [official doc](http://www.idris.fr/eng/jean-zay/jean-zay-connexion_ssh_noeud_calcul-eng.html)
+Have a look at the [official
+doc](http://www.idris.fr/eng/jean-zay/jean-zay-connexion_ssh_noeud_calcul-eng.html)
 about this as well.
 
 ### Auto Requeue on timeouts
@@ -141,10 +146,10 @@ for _ in range(epochs):
 
 ```
 
-#### CAUTION:
-
-Remember to also add a serialization logic to your objects to make sure your new job start from where your
-previous job ended. In the above case, we will restart from the previous epoch checkpoint.
+!!! warning
+    Remember to also add a serialization logic to your objects to make sure
+    your new job start from where your previous job ended. In the above case,
+    we will restart from the previous epoch checkpoint.
 
 ## Miscellaneous
 
@@ -177,7 +182,7 @@ You can consult your disk quota anytime with the command `idrquota` (see
 
 If you need to send data to Jean-Zay a good idea is to use `rsync`. E.g.:
 
-```
+```bash
 rsync -avz /your/local/database/ your-jean-zay-login@jean-zay:/gpfsscratch/your/remote/dir/
 ```
 
@@ -187,7 +192,8 @@ Add local your public ssh key to the `~/.ssh/authorized_keys` of your account on
 Your local public ssh key can be found in `~/.ssh/id_rsa.pub`.
 
 In your local ssh configuration, found in `~/.ssh/config`, you can also add the following:
-```
+
+```bash
 Host jz
 hostname jean-zay.idris.fr
 user <user-name>
@@ -199,19 +205,22 @@ To connect to the jean-zay cluster you will then just need to do `ssh jz`.
 
 SSH from Jean Zay going to the outside is very restricted. That means that if
 you are used to do
-```
+
+bash
 git clone git@my-institute-gitlab.fr:/my-organisation/my-repo.git
 ```
 it will not work on Jean Zay (very likely it will time out after some time).
 
 Instead you should use HTTPS instead i.e. something like:
-```sh
+
+```bash
 git clone https://my-institute-gitlab.fr:/my-organisation/my-repo.git
 ```
 
 In order to avoid having to type your password too often (on each `git push`)
 you can set up password caching like this:
-```sh
+
+```bash
 git config --global credential.helper cache
 # by default password is cached for 15 minutes but you can increase it if you want
 git config --global credential.helper "cache --timeout=3600"

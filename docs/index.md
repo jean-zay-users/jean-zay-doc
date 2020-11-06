@@ -1,4 +1,7 @@
-# Collaborative documentation for Jean Zay users
+# Jean Zay users
+## Collaborative documentation
+
+---
 
 ## Why this doc?
 
@@ -47,24 +50,23 @@ the Jean Zay cluster, e.g.:
 
 ## Useful links
 
-Jean Zay doc targeted towards AI users: http://www.idris.fr/eng/ia/index.html
+- [Jean Zay doc targeted towards AI users](http://www.idris.fr/eng/ia/index.htm)
 
-Hardware: http://www.idris.fr/eng/jean-zay/cpu/jean-zay-cpu-hw-eng.html
+- [Hardware](http://www.idris.fr/eng/jean-zay/cpu/jean-zay-cpu-hw-eng.html)
 
-Doc: http://www.idris.fr/eng/jean-zay/
+- [Official Doc](http://www.idris.fr/eng/jean-zay/)
 
-Doc in French (more accurate sometimes): http://www.idris.fr/jean-zay/
+- [Official Doc in French (more accurate sometimes)](http://www.idris.fr/eng/jean-zay/)
 
-
-Gitter chat: [https://gitter.im/jean-zay-users/jean-zay-doc](https://gitter.im/jean-zay-users/jean-zay-doc)
+- [Gitter chat](https://gitter.im/jean-zay-users/jean-zay-doc)
 
 ## Generic advice
 
-- There is a big cultural gap between traditional HPC (High Performance
-  Computing) users and AI users. For example, most traditional "serious" HPC
-  clusters do not have access to the internet, yes you have read this
-  correctly, people in traditional HPC do not need internet access to work on
-  their problems.
+- There are big differences in the way of working between traditional HPC (High
+  Performance Computing) users and AI users. For example, most traditional
+  "serious" HPC clusters do not have access to the internet, yes you have read
+  this correctly, people in traditional HPC do not need internet access to work
+  on their problems.
 - So far every interaction we have had with Jean Zay user support has been very
   positive. Even if there may be some frustration (on both sides), try to be
   both pedagogical and constructive when you send an email to
