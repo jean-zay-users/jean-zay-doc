@@ -19,8 +19,8 @@ is detailed in the sections below.
 1. Create an [EDARI account](https://www.edari.fr/sp/login) (simple
    personal details). See [this](#edari-account-administrative-account)
    for all the details about this step.
-2. Fill a form about your project (**"Déclaration de dossier"**). Hardest part is
-   to figure out who your "Directeur de la structure de recherche" is and to
+2. Fill a form about your project (**"Déclaration de dossier"**). Hardest part
+   is to figure out who your "Directeur de la structure de recherche" is and to
    have the form signed by him/her. You also need to write a few lines about
    your project. See [this](#d%C3%A9claration-de-dossier-project-description)
    for all the details about this step.

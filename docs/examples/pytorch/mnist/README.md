@@ -2,7 +2,7 @@
 
 You can launch the batch job (single GPU version) via:
 ```
-cd jean-zay-doc/examples/pytorch/mnist/
+cd jean-zay-doc/docs/examples/pytorch/mnist/
 sbatch ./pytorch_example_script.sh
 ```
 
@@ -15,6 +15,6 @@ different jobs). It can be useful to optimize the values of the hyperparameters
 during the training:
 
 ```
-cd jean-zay-doc/examples/pytorch/mnist/
+cd jean-zay-doc/docs/examples/pytorch/mnist/
 sbatch ./pytorch_example_script_multigpu.sh
 ```
