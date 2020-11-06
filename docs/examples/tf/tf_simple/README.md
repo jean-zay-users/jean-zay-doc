@@ -1,4 +1,4 @@
-# Tensorflow example script
+# TensorFlow single node examples
 
 To run the examples you will need to first install `click` in your environment.
 ```

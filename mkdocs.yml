@@ -64,5 +64,5 @@ nav:
       - Distributed: examples/pytorch/distributed_stl10/README.md  
     - Tensorflow examples:
       - Intro: examples/tf/README.md
-      - Simple: examples/tf/tf_simple/README.md
+      - Single node: examples/tf/tf_simple/README.md
       - Distributed: examples/tf/tf_mpi/README.md  

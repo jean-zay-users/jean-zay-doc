@@ -77,12 +77,12 @@ On your [EDARI user space](https://www.edari.fr/utilisateur), click on the
       should be plenty enough if you ask for less than 10000 GPU hours.
 
 When you finish filling out this part, you should something like this:
-<img src="./img/project-saved.png" width="60%" style="display: block"/>
+<img src="../img/project-saved.png" width="80%" style="display: block"/>
 
 !!! warning "Important"
     You need to click on "Valider la saisie des informations" to validate your
     information:
-<img src="./img/project-validate.png" width="60%" style="display: block"/>
+<img src="../img/project-validate.png" width="80%" style="display: block"/>
 
 Note that in principle once your 10000 GPU hours are exhausted you can ask for
 a renewal through a similar "lightweight" procedure.
@@ -107,12 +107,12 @@ a renewal through a similar "lightweight" procedure.
       lab.
 
 When you finish filling out this part, you should see something like this:
-<img src="./img/computing-account-saved.png" width="60%" style="display: block"/>
+<img src="../img/computing-account-saved.png" width="80%" style="display: block"/>
 
 !!! warning "Important"
     You need to click on "Valider la saisie des informations" to
     validate your information:
-<img src="./img/computing-account-validate.png" width="60%" style="display: block"/>
+<img src="../img/computing-account-validate.png" width="80%" style="display: block"/>
 
 
 ## Optional (skip this if you are French)
