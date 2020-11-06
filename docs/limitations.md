@@ -19,7 +19,7 @@ SSH port forwarding is disabled by Jean Zay sys-admin for security reasons. I
 ([Loïc](https://github.com/lesteve)) have a work-around, if you are interested
 contact me!
 
-<img src="img/ssh-port-forwarding-info.jpg"/>
+<img src="../img/ssh-port-forwarding-info.jpg"/>
 
 SSH port forwarding is also called SSH tunneling sometimes (maybe a less accurate term). This
 the kind of command you run when you are using SSH port forwarding:
