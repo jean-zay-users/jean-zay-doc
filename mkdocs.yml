@@ -63,6 +63,6 @@ nav:
       - MNIST: examples/pytorch/mnist/README.md
       - Distributed: examples/pytorch/distributed_stl10/README.md  
     - Tensorflow examples:
-      - Intro: examples/tensorflow/README.md
-      - Simple: examples/tensorflow/tf/README.md
-      - Distributed: examples/tensorflow/tf_mpi/README.md  
+      - Intro: examples/tf/README.md
+      - Simple: examples/tf/tf_simple/README.md
+      - Distributed: examples/tf/tf_mpi/README.md  

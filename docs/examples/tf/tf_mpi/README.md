@@ -23,5 +23,6 @@ There is a few important things:
 ## Enjoy
 
 ```
+cd jean-zay-doc/docs/examples/tf/tf_mpi
 sbatch tf_mpi_mnist.job
 ```
