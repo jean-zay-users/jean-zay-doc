@@ -7,7 +7,7 @@ site_description: >-
   official documentation.
 
 # Repository
-#repo_name: jean-zay-users/jean-zay-doc
+repo_name: jean-zay-users/jean-zay-doc
 repo_url: https://github.com/jean-zay-users/jean-zay-doc
 #edit_uri: master/edit/doc
 
@@ -22,8 +22,8 @@ repo_url: https://github.com/jean-zay-users/jean-zay-doc
 # Configuration
 theme:
   name: material 
-    #  icon:
-    #    repo: bootswatch/github
+  icon:
+    repo: material/github
   language: en
     #  palette:
     #    primary: green
@@ -33,13 +33,13 @@ theme:
 extra:
   feature:
     tabs: true
-#  social:
-#    - icon: material/github
-#      link: https://github.com/aramis-lab/
+  social:
+    - icon: material/github
+      link: https://github.com/jean-zay-users
 #    - icon: material/twitter
 #      link: https://twitter.com/clinica_run
-#    - icon: material/earth
-#      link: http://www.aramislab.fr
+    - icon: material/earth
+      link: http://www.idris.fr/jean-zay/
 
 # Extensions
 markdown_extensions:
