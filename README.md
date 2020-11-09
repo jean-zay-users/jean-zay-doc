@@ -13,6 +13,9 @@
 </p>
 
 
+**The documentation is now available here:
+https://jean-zay-doc.readthedocs.io/en/latest/ **
+
 # Why this doc?
 
 We are researchers and engineers in AI (very vague term but oh well ...) who
