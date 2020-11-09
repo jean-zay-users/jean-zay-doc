@@ -1,0 +1,68 @@
+# Project information
+site_name: Jean-Zay Users /  Collaborative documentation
+site_author: Jean-Zay contributors
+site_url: https://jean-zay-doc.readthedocs.io/
+site_description: >-
+  Collaborative documentation for using Jean Zay cluster. A complement to
+  official documentation.
+
+# Repository
+repo_name: jean-zay-users/jean-zay-doc
+repo_url: https://github.com/jean-zay-users/jean-zay-doc
+#edit_uri: master/edit/doc
+
+# Copyright
+#copyright: Copyright &copy; 2020 Jean Zay contributors
+
+# Google Analytics
+#google_analytics:
+#  - UA-106080699-1
+#  - auto
+
+# Configuration
+theme:
+  name: material 
+  icon:
+    repo: material/github
+  language: en
+    #  palette:
+    #    primary: green
+    #    accent: green
+
+# Customization
+extra:
+  feature:
+    tabs: true
+  social:
+    - icon: material/github
+      link: https://github.com/jean-zay-users
+#    - icon: material/twitter
+#      link: https://twitter.com/clinica_run
+    - icon: material/earth
+      link: http://www.idris.fr/jean-zay/
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - codehilite
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - toc:
+      permalink: True
+
+# Page tree
+nav:
+  - Home: index.md
+  - Access procedure: access-procedure.md
+  - Tips and Tricks: tips-and-tricks.md
+  - Limitations: limitations.md
+  - Examples:
+    - Pytorch examples: 
+      - Intro: examples/pytorch/README.md
+      - MNIST: examples/pytorch/mnist/README.md
+      - Distributed: examples/pytorch/distributed_stl10/README.md  
+    - Tensorflow examples:
+      - Intro: examples/tf/README.md
+      - Single node: examples/tf/tf_simple/README.md
+      - Distributed: examples/tf/tf_mpi/README.md  

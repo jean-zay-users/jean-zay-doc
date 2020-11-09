@@ -1,12 +1,12 @@
 # PyTorch STL10 example script
 
-stl10_example.py is based on https://github.com/pytorch/examples/tree/master/imagenet.
+stl10_example.py is based on [https://github.com/pytorch/examples/tree/master/imagenet](https://github.com/pytorch/examples/tree/master/imagenet).
 
 ## Slurm configuration
 
 By default we use the following configuration. 
 
-```shell
+```bash
 #!/bin/bash
 #SBATCH --job-name=pytorch_stl10     # job name
 #SBATCH --ntasks=2                   # number of MP tasks
@@ -19,13 +19,18 @@ By default we use the following configuration.
 #SBATCH --error=pytorch_stl10%j.err  # error file name
 ```
 
-This configuration will start a distributed training on two nodes with one GPU each. 
+This configuration will start a distributed training on two nodes with one GPU
+each. 
 
-You can change the `ntasks`, `ntasks-per-node` and `gres` options to modify this behaviour. In this context, `ntasks` corresponds to the total number of GPUs you want to use (world size), while `ntasks-per-node` and `gres` describe the number of local GPUs on each node.
+You can change the `ntasks`, `ntasks-per-node` and `gres` options to modify
+this behaviour. In this context, `ntasks` corresponds to the total number of
+GPUs you want to use (world size), while `ntasks-per-node` and `gres` describe
+the number of local GPUs on each node.
 
-For example, the following configuration will launch a distributed training with one node and two GPUs:
+For example, the following configuration will launch a distributed training
+with one node and two GPUs:
 
-```shell
+```bash
 #!/bin/bash
 #SBATCH --job-name=pytorch_stl10     # job name
 #SBATCH --ntasks=2                   # number of MP tasks
@@ -38,9 +43,10 @@ For example, the following configuration will launch a distributed training with
 #SBATCH --error=pytorch_stl10%j.err  # error file name
 ```
 
-And this one will use two entire nodes (4 GPUs per node on the default Slurm partition):
+And this one will use two entire nodes (4 GPUs per node on the default Slurm
+partition):
 
-```shell
+```bash
 #!/bin/bash
 #SBATCH --job-name=pytorch_stl10     # job name
 #SBATCH --ntasks=8                   # number of MP tasks
