@@ -4,8 +4,8 @@
 </h1>
 
 <p align="center">
-  <a ref="https://gitter.im/jean-zay-users/jean-zay-doc">
-    <img src="https://img.shields.io/gitter/room/jean-zay-users/jean-zay-doc.svg" alt="Gitter">
+  <a href='https://gitter.im/jean-zay-users/jean-zay-doc'>
+    <img src='https://img.shields.io/gitter/room/jean-zay-users/jean-zay-doc.svg' alt='Gitter' />
   </a>
   <a href='https://jean-zay-doc.readthedocs.io/en/latest/?badge=latest'>
     <img src='https://readthedocs.org/projects/jean-zay-doc/badge/?version=latest' alt='Documentation Status' />
@@ -14,7 +14,7 @@
 
 
 **The documentation is now available here:
-https://jean-zay-doc.readthedocs.io/en/latest/ **
+https://jean-zay-doc.readthedocs.io/en/latest/**
 
 # Why this doc?
 
