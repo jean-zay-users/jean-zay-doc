@@ -14,7 +14,7 @@
 
 
 **The documentation is now available here:
-https://jean-zay-doc.readthedocs.io/en/latest/ **
+https://jean-zay-doc.readthedocs.io/en/latest/**
 
 # Why this doc?
 
