@@ -191,7 +191,7 @@ You can consult your disk quota anytime with the command `idrquota` (see
 If you need to send data to Jean-Zay a good idea is to use `rsync`. E.g.:
 
 ```bash
-rsync -avz /your/local/database/
+rsync -avz /your/local/database/ \
     your-jean-zay-login@jean-zay:/gpfsscratch/your/remote/dir/
 ```
 
