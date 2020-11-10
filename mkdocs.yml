@@ -36,8 +36,8 @@ extra:
   social:
     - icon: material/github
       link: https://github.com/jean-zay-users
-#    - icon: material/twitter
-#      link: https://twitter.com/clinica_run
+    - icon: fontawesome/brands/gitter
+      link: https://gitter.im/jean-zay-users/jean-zay-doc
     - icon: material/earth
       link: http://www.idris.fr/jean-zay/
 
@@ -48,6 +48,7 @@ markdown_extensions:
   - footnotes
   - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.magiclink
   - toc:
       permalink: True
 

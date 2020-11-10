@@ -31,31 +31,32 @@ is detailed in the sections below.
    more) IP address(es) that will be able to use to connect to Jean Zay. See
    [this](#d%C3%A9claration-de-compte-calcul-computing-account-creation-for-jean-zay)
    for all the details about this step.
-4. After roughly a week, you'll get an email from IDRIS giving you your login,
+4. Security background checks for non-French citizens.  Unfortunately this
+   takes 1-2 additional months. See
+   [this](#security-background-checks-only-applies-to-non-french-citizens) for all
+   the details about this step.
+5. After roughly a week, you'll get an email from IDRIS giving you your login,
    password and instructions to connect to Jean Zay. See
    [this](#idris-email-with-login-and-password) for all the details about this
    step.
-5. After roughly 2 days, you should be able to connect to Jean Zay.
+6. After roughly 2 days, you should be able to connect to Jean Zay.
 
 ## EDARI account (administrative account)
 
 !!! info "Estimate of the time needed:"
     5 minutes.
 
-To create an EDARI account:
-[https://www.edari.fr/sp/login](https://www.edari.fr/sp/login) (for a wide
-range of academic institutions through RENATER) or
-[https://www.edari.fr/user/register](https://www.edari.fr/user/register) (if
-you can not find your institution in the first link).
+To create an EDARI account, two possibilities:
+
+1. https://www.edari.fr/sp/login (for a wide range of
+   academic institutions through RENATER)
+2. alternatively use https://www.edari.fr/user/register (for example if you can
+   not find your institution in the first link)
 
 In case something goes wrong:
 
 - Contact for [EDARI account](https://www.edari.fr/contact)
 - [EDARI FAQ](https://www.edari.fr/faq)
-
-!!! warning
-    When filling your phone number, use a real one. Yes, you may get a call to
-    have a better idea what you want to do ...
 
 ## "Déclaration de dossier" (project description)
 
@@ -82,7 +83,7 @@ When you finish filling out this part, you should something like this:
 !!! warning "Important"
     You need to click on "Valider la saisie des informations" to validate your
     information:
-<img src="../img/project-validate.png" width="80%" style="display: block"/>
+    <img src="../img/project-validate.png" width="80%" style="display: block"/>
 
 Note that in principle once your 10000 GPU hours are exhausted you can ask for
 a renewal through a similar "lightweight" procedure.
@@ -112,10 +113,10 @@ When you finish filling out this part, you should see something like this:
 !!! warning "Important"
     You need to click on "Valider la saisie des informations" to
     validate your information:
-<img src="../img/computing-account-validate.png" width="80%" style="display: block"/>
+    <img src="../img/computing-account-validate.png" width="80%" style="display: block"/>
 
 
-## Optional (skip this if you are French)
+## Security background checks (only applies to non-French citizens)
 
 The direction of IDRIS will most likely require an additional security
 authorization. You will have to fill a form with basic information about
@@ -135,10 +136,11 @@ The project description comes in two parts:
   employment » next to it.
 
 After everything is submitted, you should receive an e-mail saying it will take
-between 1 and 2 months (In practice it took 2.5 months). Do not hesitate to
-send them an email if you don't hear from them maybe after 1 month the first
-time, and then every two weeks until you manage to get through the security
-background checks (fix this part if you have better recommendations).
+between 1 and 2 months (in practice it took 2.5 months). Do not hesitate to
+send them an email asking about the status of your application if you don't
+hear from them maybe after 1 month the first time, and then every two weeks
+until you manage to get through the security background checks (fix this part
+if you have better recommendations).
 
 Once this step is complete, the regular procedure applies.
 
@@ -166,15 +168,14 @@ a week.
 
 To add additionnal IP addresses to those mentioned on your original declaration:
 
-- Fill the "Ajout, modification ou suppression de machines" table on page 2 of§
+- Fill the "Ajout, modification ou suppression de machines" table on page 2 of
   [this pdf
   document](http://www.idris.fr/media/data/formulaires/fgc.pdf#page=2).
 - Have it signed by your "Responsable sécurité informatique".
 - e-mail the signed form to gestutil@idris.fr and wait 1-2 days until the change
   actually takes effect.
 
-# How to write a project proposal (only needed if you request more than 10k GPU
-hours)
+# How to write a project proposal (only needed if you request more than 10k GPU hours)
 
 !!! info "Estimate of the time needed:"
     1h (write a project) + a few days/weeks for approval (depending on the
