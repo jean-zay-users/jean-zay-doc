@@ -37,7 +37,8 @@ Your can use `srun` to launch an interactive job.
 For example, if you want to use a node with 4 GPUs during 1 hour, you can type:
 
 ```bash
-srun --ntasks=1 --cpus-per-task=40 --gres=gpu:4 --time=01:00:00 --qos=qos_gpu-dev --pty bash -i
+srun --ntasks=1 --cpus-per-task=40 --gres=gpu:4 --time=01:00:00 \
+     --qos=qos_gpu-dev --pty bash -i
 ```
 
 Now, you have a brand new shell on a compute node where you can run your scripts interactively
@@ -74,7 +75,7 @@ or `jean-zay-ia816` are valid node names.
 
 If you don't have a job running on the node you will get an error like this:
 
-```bash
+```
 Access denied by pam_slurm_adopt: you have no active jobs on this node
 Connection closed by 10.148.8.45 port 22
 ```
@@ -190,7 +191,8 @@ You can consult your disk quota anytime with the command `idrquota` (see
 If you need to send data to Jean-Zay a good idea is to use `rsync`. E.g.:
 
 ```bash
-rsync -avz /your/local/database/ your-jean-zay-login@jean-zay:/gpfsscratch/your/remote/dir/
+rsync -avz /your/local/database/
+    your-jean-zay-login@jean-zay:/gpfsscratch/your/remote/dir/
 ```
 
 ### Connect seamlessly from your local machine
@@ -229,7 +231,8 @@ you can set up password caching like this:
 
 ```bash
 git config --global credential.helper cache
-# by default password is cached for 15 minutes but you can increase it if you want
+# by default password is cached for 15 minutes
+# the next line increases it to 1 hour
 git config --global credential.helper "cache --timeout=3600"
 ```
 
