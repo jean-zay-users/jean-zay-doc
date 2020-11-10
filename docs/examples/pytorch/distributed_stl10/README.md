@@ -1,4 +1,4 @@
-# PyTorch STL10 example script
+# [PyTorch STL10 example script](https://github.com/jean-zay-users/jean-zay-doc/tree/master/docs/examples/pytorch/distributed_stl10)
 
 stl10_example.py is based on [https://github.com/pytorch/examples/tree/master/imagenet](https://github.com/pytorch/examples/tree/master/imagenet).
 

@@ -1,4 +1,4 @@
-# Pytorch MNIST example script
+# [Pytorch MNIST example script](https://github.com/jean-zay-users/jean-zay-doc/tree/master/docs/examples/pytorch/mnist)
 
 You can launch the batch job (single GPU version) via:
 ```

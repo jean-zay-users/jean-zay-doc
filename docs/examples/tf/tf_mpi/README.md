@@ -1,4 +1,4 @@
-# MNIST with TensorFlow using MPI through Horovod
+# [MNIST with TensorFlow using MPI through Horovod](https://github.com/jean-zay-users/jean-zay-doc/tree/master/docs/examples/tf/tf_mpi)
 
 This toy-example shows how to do distributed training using TensorFlow and
 Horovod.  Since Jean-Zay nodes are connected using MPI and with NCCL,
