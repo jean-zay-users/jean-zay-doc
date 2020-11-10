@@ -8,7 +8,8 @@ Install `miniconda` in `$WORK/miniconda3`:
 
 ```bash
 # download Miniconda installer
-wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh \
+    -O miniconda.sh
 # install Miniconda
 MINICONDA_PATH=$WORK/miniconda3
 chmod +x miniconda.sh && ./miniconda.sh -b -p $MINICONDA_PATH
@@ -60,6 +61,9 @@ A = allocated, I = idle, O = other, T = total
 
 ### How to connect to the node of a launched GPU job
 
+This can be useful to do lightweight monitoring of your job, for example to
+look at `nvidia-smi` output while your job is running.
+
 You can directly connect to a node used by one of your jobs with SSH:
 
 ```bash
@@ -78,8 +82,8 @@ Connection closed by 10.148.8.45 port 22
 Caveat (September 2020) : if you have multiple jobs running on the same node it
 is not possible to specify which job you want to connect to.
 
-Have a look at the [official
-doc](http://www.idris.fr/eng/jean-zay/jean-zay-connexion_ssh_noeud_calcul-eng.html)
+Have a look at the [official doc](
+http://www.idris.fr/eng/jean-zay/jean-zay-connexion_ssh_noeud_calcul-eng.html)
 about this as well.
 
 ### Auto Requeue on timeouts
@@ -97,7 +101,8 @@ in Python and automatically requeue a similar job.
 You need to add the following to your Slurm shell: 
 
 ```bash
-#SBATCH --signal=USR1@20   # asks SLURM to send the USR1 signal 20 seconds before end of the time limit
+# asks SLURM to send the USR1 signal 20 seconds before the end of the time limit
+#SBATCH --signal=USR1@20
 ```
 
 And handle the signal in Python:
@@ -208,7 +213,7 @@ To connect to the jean-zay cluster you will then just need to do `ssh jz`.
 SSH from Jean Zay going to the outside is very restricted. That means that if
 you are used to do
 
-bash
+```bash
 git clone git@my-institute-gitlab.fr:/my-organisation/my-repo.git
 ```
 it will not work on Jean Zay (very likely it will time out after some time).

@@ -9,8 +9,8 @@ We are researchers and engineers in AI (very vague term but oh well ...) who
 have managed to get access to Jean Zay and think this can be a very useful
 cluster for your AI research.
 
-At the time of writing (end January 2020), the GPU part of Jean Zay is very
-much underused and we think a user-contributed documentation could help people
+At the time of writing (November 2020), the GPU part of Jean Zay is very much
+underused and we think a user-contributed documentation could help people
 navigating the access procedure and knowing a few necessary tips and tricks to
 be productive on such a cluster.
 
@@ -26,9 +26,9 @@ We use gitter for chat, don't hesitate to get involved
 ## Content
 
 - [Access procedure](./access-procedure.md). The access procedure for Jean Zay
-  will take roughly 3 weeks (add 1-2 monts on top of that if you are not French
-  for background security checks). It does seem long but it is definitely worth
-  it.
+  will take roughly 3 weeks (add 1-2 months on top of that if you are not
+  French for background security checks). It does seem long but it is definitely
+  worth it.
 - [Tips and tricks](./tips-and-tricks.md)
 - [Limitations](./limitations.md)
 - Example scripts: [PyTorch examples](./examples/pytorch), [Tensorflow
