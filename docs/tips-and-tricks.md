@@ -99,7 +99,7 @@ maximum walltime limit.
 It is possible to ask Slurm to send a signal before the job timeouts, handle it
 in Python and automatically requeue a similar job.
 
-You need to add the following to your Slurm shell: 
+You need to add the following to your Slurm submission script:
 
 ```bash
 # asks SLURM to send the USR1 signal 20 seconds before the end of the time limit
