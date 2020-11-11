@@ -26,3 +26,14 @@ There is a few important things:
 cd jean-zay-doc/docs/examples/tf/tf_mpi
 sbatch tf_mpi_mnist.job
 ```
+
+## Code
+
+The code for the distributed training (`tf_mpi_mnist.py`):
+
+{{code_from_file("examples/tf/tf_mpi/tf_mpi_mnist.py", "python")}}
+
+and the script to launch the job:
+
+{{code_from_file("examples/tf/tf_mpi/tf_mpi_mnist.job", "bash")}}
+

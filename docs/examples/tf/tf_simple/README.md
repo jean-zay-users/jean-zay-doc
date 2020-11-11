@@ -26,6 +26,18 @@ jean-zay-doc/docs/examples/tf/tf_simple
 sbatch mnist_submission_script_multi_gpus.slurm
 ```
 
+The training code used in this example is:
+
+{{code_from_file("examples/tf/tf_simple/mnist_example.py", "python")}}
+
+and the script used to launch a single GPU job is:
+
+{{code_from_file("examples/tf/tf_simple/mnist_submission_script.slurm", "bash")}}
+
+to launch the same code using a multiGPU configuration, use the following script:
+
+{{code_from_file("examples/tf/tf_simple/mnist_submission_script_multi_gpus.slurm", "bash")}}
+
 ## Dask example
 
 To run the dask example you will need to install `dask-jobqueue` in your
@@ -52,3 +64,7 @@ otherwise Tensorflow will not be loaded.  This is because the python executable
 used to launch the dask worker is the same as the one used to launch the
 scheduler by default.  You can set it otherwise in the cluster if you want
 something more tailored.
+
+Here is the code for the file `dask_script.py`:
+
+{{code_from_file("examples/tf/tf_simple/dask_script.py", "python")}}
