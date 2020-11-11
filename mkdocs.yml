@@ -52,6 +52,11 @@ markdown_extensions:
   - toc:
       permalink: True
 
+plugins:
+  - search
+  - macros:
+      module_name: docs/macros
+
 # Page tree
 nav:
   - Home: index.md
