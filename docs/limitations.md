@@ -17,7 +17,7 @@ http://www.idris.fr/eng/jean-zay/cpu/jean-zay-utilisation-singularity-eng.html**
 ## SSH port forwarding disabled
 
 SSH port forwarding is disabled by Jean Zay sys-admin for security reasons.
-([Loïc](https://github.com/lesteve)) have a work-around, if you are interested
+[Loïc](https://github.com/lesteve) has a work-around, if you are interested
 contact him!
 
 <img src="../img/ssh-port-forwarding-info.jpg"/>
