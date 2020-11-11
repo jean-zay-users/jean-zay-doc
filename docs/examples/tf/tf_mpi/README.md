@@ -1,4 +1,4 @@
-# MNIST with TensorFlow using MPI through Horovod
+# [MNIST with TensorFlow using MPI through Horovod](https://github.com/jean-zay-users/jean-zay-doc/tree/master/docs/examples/tf/tf_mpi)
 
 This toy-example shows how to do distributed training using TensorFlow and
 Horovod.  Since Jean-Zay nodes are connected using MPI and with NCCL,
@@ -26,3 +26,14 @@ There is a few important things:
 cd jean-zay-doc/docs/examples/tf/tf_mpi
 sbatch tf_mpi_mnist.job
 ```
+
+## Code
+
+The code for the distributed training (`tf_mpi_mnist.py`):
+
+{{code_from_file("examples/tf/tf_mpi/tf_mpi_mnist.py", "python")}}
+
+and the script to launch the job:
+
+{{code_from_file("examples/tf/tf_mpi/tf_mpi_mnist.job", "bash")}}
+

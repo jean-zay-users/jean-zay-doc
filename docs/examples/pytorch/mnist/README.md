@@ -1,4 +1,4 @@
-# Pytorch MNIST example script
+# [Pytorch MNIST example script](https://github.com/jean-zay-users/jean-zay-doc/tree/master/docs/examples/pytorch/mnist)
 
 You can launch the batch job (single GPU version) via:
 ```
@@ -18,3 +18,11 @@ during the training:
 cd jean-zay-doc/docs/examples/pytorch/mnist/
 sbatch ./pytorch_example_script_multigpu.sh
 ```
+
+This is the example script (`mnist_example.py`):
+
+{{code_from_file("examples/pytorch/mnist/mnist_example.py", "python")}}
+
+And the launching script for a single GPU version (`pytorch_example_script.sh`):
+
+{{code_from_file("examples/pytorch/mnist/pytorch_example_script.sh", "bash")}}
