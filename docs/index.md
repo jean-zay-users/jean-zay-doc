@@ -1,7 +1,9 @@
 # Jean Zay users
 ## Collaborative documentation
-
 ---
+[![Gitter](https://img.shields.io/gitter/room/jean-zay-users/jean-zay-doc.svg)](https://gitter.im/jean-zay-users/jean-zay-doc)
+[![Docs](https://readthedocs.org/projects/jean-zay-doc/badge/?version=latest)](https://jean-zay-doc.readthedocs.io/en/latest/?badge=latest)
+
 
 ## Why this doc?
 
