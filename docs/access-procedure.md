@@ -1,8 +1,8 @@
 # Access procedure for Jean Zay
 
-Our experience is that the access procedure for Jean Zay takes roughly 3
-weeks (add 1-2 months on top of that if you are not French for background
-security checks). It does seem long but it is definitely worth it.
+Our experience is that the access procedure for Jean Zay takes roughly 3 weeks
+(add 1-2 months on top of that if you have to go through additional security
+background checks). It does seem long but it is definitely worth it.
 
 !!! tip
     Find people that have accessed IDRIS or GENCI clusters around you. If you
@@ -31,10 +31,10 @@ is detailed in the sections below.
    more) IP address(es) that will be able to use to connect to Jean Zay. See
    [this](#d%C3%A9claration-de-compte-calcul-computing-account-creation-for-jean-zay)
    for all the details about this step.
-4. Security background checks for non-French citizens.  Unfortunately this
-   takes 1-2 additional months. See
-   [this](#security-background-checks-only-applies-to-non-french-citizens) for all
-   the details about this step.
+4. Additional security background checks in some cases. Unfortunately
+   this takes 1-2 additional months. See
+   [this](#additional-security-background-checks) for all the details about
+   this step.
 5. After roughly a week, you'll get an email from IDRIS giving you your login,
    password and instructions to connect to Jean Zay. See
    [this](#idris-email-with-login-and-password) for all the details about this
@@ -116,10 +116,12 @@ When you finish filling out this part, you should see something like this:
     <img src="../img/computing-account-validate.png" width="80%" style="display: block"/>
 
 
-## Security background checks (only applies to non-French citizens)
+## Additional security background checks in some cases
 
-The direction of IDRIS will most likely require an additional security
-authorization. You will have to fill a form with basic information about
+In some cases, the direction of IDRIS can require additional security
+background checks.
+
+You will have to fill a form with basic information about
 yourself (name, address, date and place of birth) and about the project you
 will be working on: where you will be working from, where your financing comes
 from (e.g. Inria, a project grant, etc ...), and a description of your project.
@@ -135,8 +137,9 @@ The project description comes in two parts:
   one month break, you should specify this month on your CV and state « No
   employment » next to it.
 
-After everything is submitted, you should receive an e-mail saying it will take
-between 1 and 2 months (in practice it took 2.5 months). Do not hesitate to
+After all the paperwork has been submitted, you should receive an e-mail saying
+that the security background chekcs will take between 1 and 2 months. The 2
+months is a hard limit and is actually warranted by law. Do not hesitate to
 send them an email asking about the status of your application if you don't
 hear from them maybe after 1 month the first time, and then every two weeks
 until you manage to get through the security background checks (fix this part

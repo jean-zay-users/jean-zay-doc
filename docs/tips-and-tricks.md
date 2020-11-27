@@ -210,6 +210,9 @@ user <user-name>
 
 To connect to the jean-zay cluster you will then just need to do `ssh jz`.
 
+For good practices about SSH keys you can have a look at:
+http://www.idris.fr/faqs/ssh_keys.html
+
 ### Clone git repo
 
 SSH from Jean Zay going to the outside is very restricted. That means that if

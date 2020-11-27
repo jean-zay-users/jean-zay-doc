@@ -28,9 +28,9 @@ We use gitter for chat, don't hesitate to get involved
 ## Content
 
 - [Access procedure](./access-procedure.md). The access procedure for Jean Zay
-  will take roughly 3 weeks (add 1-2 months on top of that if you are not
-  French for background security checks). It does seem long but it is definitely
-  worth it.
+  will take roughly 3 weeks (add 1-2 months on top of that if you have to go
+  through additional security background checks). It does seem long but it is
+  definitely worth it.
 - [Tips and tricks](./tips-and-tricks.md)
 - [Limitations](./limitations.md)
 - Example scripts: [PyTorch examples](./examples/pytorch), [Tensorflow
