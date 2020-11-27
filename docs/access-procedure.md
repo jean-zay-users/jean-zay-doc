@@ -33,8 +33,8 @@ is detailed in the sections below.
    for all the details about this step.
 4. Additional security background checks in some cases. Unfortunately
    this takes 1-2 additional months. See
-   [this](#additional-security-background-checks) for all the details about
-   this step.
+   [this](#additional-security-background-checks-in-some-cases) for all the
+   details about this step.
 5. After roughly a week, you'll get an email from IDRIS giving you your login,
    password and instructions to connect to Jean Zay. See
    [this](#idris-email-with-login-and-password) for all the details about this
