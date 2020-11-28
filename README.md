@@ -1,17 +1,7 @@
-<h1 align="center">
-  <strong>Collaborative documentation for Jean Zay users</strong>
-  <br/>
-</h1>
+# Collaborative documentation for Jean Zay users
 
-<p align="center">
-  <a href='https://gitter.im/jean-zay-users/jean-zay-doc'>
-    <img src='https://img.shields.io/gitter/room/jean-zay-users/jean-zay-doc.svg' alt='Gitter' />
-  </a>
-  <a href='https://jean-zay-doc.readthedocs.io/en/latest/?badge=latest'>
-    <img src='https://readthedocs.org/projects/jean-zay-doc/badge/?version=latest' alt='Documentation Status' />
-  </a>
-</p>
-
+[![Gitter](https://img.shields.io/gitter/room/jean-zay-users/jean-zay-doc.svg)](https://gitter.im/jean-zay-users/jean-zay-doc)
+[![Documentation Status](https://readthedocs.org/projects/jean-zay-doc/badge/?version=latest)](https://jean-zay-doc.readthedocs.io)
 
 **The documentation is now available here:
 https://jean-zay-doc.readthedocs.io/en/latest/**
@@ -22,12 +12,12 @@ We are researchers and engineers in AI (very vague term but oh well ...) who
 have managed to get access to Jean Zay and think this can be a very useful
 cluster for your AI research.
 
-At the time of writing (end January 2020), the GPU part of Jean Zay is very
-much underused and we think a user-contributed documentation could help people
+At the time of writing (end November 2020), the GPU part of Jean Zay is still
+underused and we think a user-contributed documentation could help people
 navigating the access procedure and knowing a few necessary tips and tricks to
 be productive on such a cluster.
 
-**This is supposed to be a collaborative doc, if you spot errors or things that
+**This is a collaborative doc, if you spot errors or things that
 could be improved, open an
 [issue](https://github.com/jean-zay-users/jean-zay-doc/issues/new) or even
 better a [Pull Request (PR)](https://github.com/jean-zay-users/jean-zay-doc/compare)!**
