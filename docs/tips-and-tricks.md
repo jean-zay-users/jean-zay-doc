@@ -1,5 +1,18 @@
 # Tips and Tricks
 
+## Bash config
+
+By default, the `.bashrc` is not executed when connecting on the cluster.
+To make sure it is run, add a file `~/.bash_profile` with
+
+```bash
+#
+# ~/.bash_profile
+#
+
+[[ -f ~/.bashrc ]] && . ~/.bashrc
+```
+
 ## Python
 
 ### Install miniconda (recommended solution if you are already familiar with conda)
