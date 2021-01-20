@@ -256,3 +256,28 @@ If for some reason, you do absolutely need SSH access from Jean Zay to an
 outside server, you need to fill out this form:
 http://www.idris.fr/media/data/formulaires/fgc.pdf, mostly the section "Ajout,
 modification ou suppression de machines".
+
+
+### Tensoboard dev
+
+The recommended way to use Tensoboard on Jean Zay, is to use the `idrjup`
+command and launch it from a jupyter notebook environment.
+This method is described in the [official docs](http://www.idris.fr/jean-zay/pre-post/jean-zay-jupyter-notebook.html).
+
+
+However, if this feels cumbersome, Tensorboard dev might be an alternative.
+[Tensoboard dev](https://tensorboard.dev/) is a tool allowing you to upload your
+Tensorboard events on the cloud and read them online using Google OAuth.
+You will find the main Tensoboard tabs, and many others are in development.
+
+Practically on Jean Zay, you will need to:
+1. install tensorboard: `pip install tensorboard`;
+2. create a screen: `screen -S tensorboard-dev`;
+3. launch Tensoboard dev: `tensorboard dev upload --logdir /path/to/logs`;
+4. copy the url (for example https://tensorboard.dev/experiment/EDZb7XgKSBKo6Gznh3i8hg/#scalars) and detach from the screen session
+
+Afterwards, you can keep monitoring your training with the same address, as the
+events will be uploaded on-the-fly.
+
+However, since your process is running on a front node, it will be killed after
+30 minutes of CPU time, which roughly translates to 11 hours for Tensoboard dev.
