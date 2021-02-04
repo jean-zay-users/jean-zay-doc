@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=mnist_tf_distributed     # job name
 #SBATCH --partition=gpu_p1          # nodes on gpu_p1 have 4 GPUs each
-#SBATCH --nnodes=2                 # number of nodes
+#SBATCH --nodes=2                 # number of nodes
 #SBATCH --ntasks-per-node=1         # number of MPI task per node
 #SBATCH --gres=gpu:4                # number of GPUs per node
 #SBATCH --cpus-per-task=40          # since nodes have 40 cpus
