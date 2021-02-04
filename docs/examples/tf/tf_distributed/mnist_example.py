@@ -27,6 +27,10 @@ def train_dense_model(batch_size):
 
         model = keras.Model(inputs=inputs, outputs=outputs, name='mnist_model')
 
+        model.compile(loss=keras.losses.SparseCategoricalCrossentropy(from_logits=True),
+                      optimizer=keras.optimizers.RMSprop(),
+                      metrics=['accuracy'])
+
     # training and inference
     # network is not reachable, so we use random data
     x_train = tf.random.normal((60000, 784), dtype='float32')
@@ -35,9 +39,6 @@ def train_dense_model(batch_size):
     y_test = tf.random.uniform((10000,), minval=0, maxval=10, dtype='int32')
 
 
-    model.compile(loss=keras.losses.SparseCategoricalCrossentropy(from_logits=True),
-                  optimizer=keras.optimizers.RMSprop(),
-                  metrics=['accuracy'])
     history = model.fit(x_train, y_train,
                         batch_size=batch_size,
                         epochs=5,
