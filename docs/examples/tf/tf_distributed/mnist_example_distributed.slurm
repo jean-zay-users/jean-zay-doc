@@ -6,7 +6,7 @@
 #SBATCH --cpus-per-task=40          # since nodes have 40 cpus
 #SBATCH --hint=nomultithread         # we get physical cores not logical
 #SBATCH --distribution=block:block  # distribution, might be better to have contiguous blocks
-#SBATCH --time=01:00:00             # job length
+#SBATCH --time=00:10:00             # job length
 #SBATCH --output=mnist_tf_distr_log_%j.out  # std out
 #SBATCH --error=mnist_tf_distr_log_%j.out   # std err
 #SBATCH --exclusive                 # we reserve the entire node four our job
