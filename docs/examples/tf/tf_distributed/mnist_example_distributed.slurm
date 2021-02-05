@@ -9,7 +9,7 @@
 #SBATCH --time=00:10:00             # job length
 #SBATCH --output=mnist_tf_distr_log_%j.out  # std out
 #SBATCH --error=mnist_tf_distr_log_%j.out   # std err
-#SBATCH --exclusive                 # we reserve the entire node four our job
+#SBATCH --exclusive                 # we reserve the entire node for our job
 #SBATCH --qos=qos_gpu-dev         # we are submitting a test job
 #SBATCH -A changeme@gpu
 
