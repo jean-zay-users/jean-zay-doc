@@ -16,7 +16,7 @@ def train_dense_model(batch_size):
     # model building
     tf.keras.backend.clear_session()  # For easy reset of notebook state.
 
-    slurm_resolver = tf.distribute.cluster_resolver.SlurmClusterResolver()
+    slurm_resolver = tf.distribute.cluster_resolver.SlurmClusterResolver(port_base=15000)
     mirrored_strategy = tf.distribute.MultiWorkerMirroredStrategy(cluster_resolver=slurm_resolver)
     print('Number of replicas:', mirrored_strategy.num_replicas_in_sync)
     with mirrored_strategy.scope():
