@@ -13,6 +13,8 @@
 #SBATCH --qos=qos_gpu-dev         # we are submitting a test job
 #SBATCH -A changeme@gpu
 
+unset http_proxy https_proxy HTTP_PROXY HTTPS_PROXY
+
 set -x
 cd ${SLURM_SUBMIT_DIR}
 
