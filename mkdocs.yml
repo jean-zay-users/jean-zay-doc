@@ -21,7 +21,7 @@ repo_url: https://github.com/jean-zay-users/jean-zay-doc
 
 # Configuration
 theme:
-  name: material 
+  name: material
   icon:
     repo: material/github
   language: en
@@ -64,11 +64,12 @@ nav:
   - Tips and Tricks: tips-and-tricks.md
   - Limitations: limitations.md
   - Examples:
-    - Pytorch examples: 
+    - Pytorch examples:
       - Intro: examples/pytorch/README.md
       - MNIST: examples/pytorch/mnist/README.md
-      - Distributed: examples/pytorch/distributed_stl10/README.md  
+      - Distributed: examples/pytorch/distributed_stl10/README.md
     - Tensorflow examples:
       - Intro: examples/tf/README.md
       - Single node: examples/tf/tf_simple/README.md
-      - Distributed: examples/tf/tf_mpi/README.md  
+      - Distributed with SlurmClusterResolver: examples/tf/tf_distributed/README.md
+      - Distributed with Horovod: examples/tf/tf_mpi/README.md
