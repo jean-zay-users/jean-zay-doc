@@ -285,7 +285,12 @@ However, since your process is running on a front node, it will be killed after
 
 ### gitlab-runner
 
-CI workflows are not currently supported on Jean Zay (soon?).
+CI's workflows are not currently supported on Jean Zay (soon?).
+
+* Disclaimer : Setting a runner on Jean Zay for your gitlab project could
+deduct some calculation time on your hours account, depending on the job it executes.
+Please be aware that anyone pushing on your repo may trigger a time-consuming job on Jean Zay.
+For more information, please visit [gitlab branch protection](https://docs.gitlab.com/ee/user/project/protected_branches.html).
 
 Here is a procedure to run a gitlab-runner in user mode on your account:
 1. launch a conda env
@@ -297,7 +302,7 @@ Here is a procedure to run a gitlab-runner in user mode on your account:
     
 6. detach from tmux session : Ctrl + B and D
 7. check your runner status in the Settings->CI/CD->runners tab of your gitlab repo.
-8. create your .gitlab-ci.yml file has decribed [here](https://docs.gitlab.com/ee/ci/yaml/gitlab_ci_yaml.html)
+8. create your .gitlab-ci.yml file as described [here](https://docs.gitlab.com/ee/ci/yaml/gitlab_ci_yaml.html)
 
 * You may use the registration token provided in Settings->CI/CD->runners of your gitlab project in the .toml config file.
 * working directory will be used to store CI builds, reports and outputs.
