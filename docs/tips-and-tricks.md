@@ -210,7 +210,7 @@ rsync -avz /your/local/database/ \
 
 ### Using available datasets
 
-Common datatsets are available on `$DSDIR`. When is dataset are zipped like COCO, 
+Common datatsets are available on `$DSDIR`. When a dataset is zipped, like COCO, 
 you can unzip it in `$SCRATCH` with `unzip -DD` or `tar -m` to use the dates from archive 
 extraction time rather than (the default) to use the dates of the original files when the archive was created.
 This will prevent the wipe of your freshly unzipped dataset.
