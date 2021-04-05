@@ -210,10 +210,11 @@ rsync -avz /your/local/database/ \
 
 ### Using available datasets
 
-Common datatsets are available on `$DSDIR`. Sometimes, raw data are directly available such as for the ImageNet dataset. 
-In such cases, you can read datasets from `$DSDIR` directly without the need to copy the dataset to your `$SCRATCH` partition for example.
-However, for datasets like COCO you need to unzip files to one of your own directories. `$SCRATCH` may be a good fit to unzip datasets
-but has a 30 days limit after which your data may be deleted. To unzip files, use `unzip -DD` or `tar -m` to use the dates from archive extraction time rather than (the default) to use the dates of the original files when the archive was created.
+Common datatsets are available on `$DSDIR`. When the dataset are zipped (like COCO), 
+you can unzip them in `$SCRATCH` with `unzip -DD` or `tar -m` to use the dates from archive 
+extraction time rather than (the default) to use the dates of the original files when the archive was created.
+This will prevent the wipe of your freshly unzipped dataset.
+If raw data are directly available such as for the ImageNet dataset, you can read datasets from `$DSDIR` directly without the need to copy the dataset to `$SCRATCH`.
 
 ### Connect seamlessly from your local machine
 
