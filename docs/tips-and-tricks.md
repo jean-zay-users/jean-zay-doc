@@ -208,6 +208,14 @@ rsync -avz /your/local/database/ \
     your-jean-zay-login@jean-zay:/gpfsscratch/your/remote/dir/
 ```
 
+### Using available datasets
+
+Common datatsets are available on `$DSDIR`. When a dataset is zipped, like COCO, 
+you can unzip it in `$SCRATCH` with `unzip -DD` or `tar -m` to use the dates from archive 
+extraction time rather than (the default) to use the dates of the original files when the archive was created.
+This will prevent the wipe of your freshly unzipped dataset.
+If raw data is directly available such as for the ImageNet dataset, you can read datasets from `$DSDIR` directly without the need to copy the dataset to `$SCRATCH`.
+
 ### Connect seamlessly from your local machine
 
 Add local your public ssh key to the `~/.ssh/authorized_keys` of your account on the jean-zay cluster.
