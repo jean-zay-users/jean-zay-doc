@@ -298,7 +298,7 @@ pip install tensorboard
 
 3. Launch Tensorboard on your local machine
 ```
-tensorboard --logdir=$HOME/jeanzay/logs
+tensorboard --logdir=/your/local/tensorboard/log/folder
 ```
 
 This will open a new tab in your local browser and show the progress of your training.
