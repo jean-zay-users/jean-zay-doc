@@ -73,7 +73,7 @@ On your [EDARI user space](https://www.edari.fr/utilisateur), click on the
       department, head of the institute, do what is easier for you.
     - As long as you ask for <= 10000 GPU hours (~400 days on a single GPU) and
       less than 48 GPUs simultaneously (4 GPUs on 12 nodes) it should go through
-      easily (see https://www.edari.fr/voirlappel56).
+      easily.
     - Project description : no need to spend too much time on this, 3-5 lines
       should be plenty enough if you ask for less than 10000 GPU hours.
 
