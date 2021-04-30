@@ -7,7 +7,7 @@
 # /!\ Caution, in the following line, "multithread" refers to hyperthreading.
 #SBATCH --hint=nomultithread         # we get physical cores not logical
 #SBATCH --distribution=block:block   # we pin the tasks on contiguous cores
-#SBATCH --time=3:00:00              # maximum execution time (HH:MM:SS)
+#SBATCH --time=2:00:00              # maximum execution time (HH:MM:SS)
 #SBATCH --output=tf_mnist%j.out # output file name
 #SBATCH --error=tf_mnist%j.out  # error file name
 #SBATCH --qos=qos_gpu-dev         # we are submitting a test job
