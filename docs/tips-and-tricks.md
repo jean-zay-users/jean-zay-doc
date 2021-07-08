@@ -360,26 +360,32 @@ docs](http://www.idris.fr/jean-zay/pre-post/jean-zay-jupyter-notebook.html).
 
 CI's workflows are not currently supported on Jean Zay (soon?).
 
-* Disclaimer : Setting a runner on Jean Zay for your gitlab project could
-deduct some calculation time on your hours account, depending on the job it executes.
-Please be aware that anyone pushing on your repo may trigger a time-consuming job on Jean Zay.
-For more information, please visit [gitlab branch protection](https://docs.gitlab.com/ee/user/project/protected_branches.html).
+!!! warning "Disclamer"
+    Setting a runner on Jean Zay for your gitlab project could deduct some
+    calculation time on your hours account, depending on the job it executes.
+    Please be aware that anyone pushing on your repo may trigger a
+    time-consuming job on Jean Zay.  For more information, please visit [gitlab
+    branch
+    protection](https://docs.gitlab.com/ee/user/project/protected_branches.html).
 
 Here is a procedure to run a gitlab-runner in user mode on your account:
+
 1. launch a conda env
 2. get gitlab-runner from anaconda repo : `conda install -c conda-forge gitlab-runner`
 3. open a tmux session : `tmux`
 4. register a new runner : `gitlab-runner register` as described [here](https://docs.gitlab.com/runner/register/#linux)
 5. launch user-mode gitlab-runner :
    `gitlab-runner run --working-directory <path to >/CI-Outputs --config <path to>/.gitlab-runner/config.toml --service gitlab-runner &`
-
 6. detach from tmux session : Ctrl + B and D
 7. check your runner status in the Settings->CI/CD->runners tab of your gitlab repo.
 8. create your .gitlab-ci.yml file as described [here](https://docs.gitlab.com/ee/ci/yaml/gitlab_ci_yaml.html)
 
-* You may use the registration token provided in Settings->CI/CD->runners of your gitlab project in the .toml config file.
-* working directory will be used to store CI builds, reports and outputs.
-* often check your that your tmux session is still alive (usually killed on tuesdays)
+!!! note
+    * You may use the registration token provided in Settings->CI/CD->runners
+      of your gitlab project in the .toml config file.
+    * `$WORK` directory will be used to store CI builds, reports and outputs.
+    * Check periodically your that your tmux session is still alive (usually killed on
+      tuesdays).
 
 #### config.toml example
 ```
