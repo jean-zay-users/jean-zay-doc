@@ -207,11 +207,15 @@ If you need to send data to Jean-Zay a good idea is to use `rsync`. E.g.:
 rsync -avz /your/local/database/ \
     your-jean-zay-login@jean-zay:/gpfsscratch/your/remote/dir/
 ```
-### Requesting extra inodes
+### Requesting extra inodes or extra storage space
 
 1. Create a password for the extranet from the command line program `passextranet`.
-2. Connect to the extranet (`https://extranet.idris.fr`) from an approved machine using your normal user name and this newly created password
-3. Grant a request for extra inodes.
+2. Connect to the extranet (`https://extranet.idris.fr`) from an approved machine with your Jean-Zay username and this above password.
+3. Grant your request.
+
+!!! warning
+    The number of inodes seem to be a bottleneck for Jean-Zay platform. Do not expect a too high number of obtained requests.
+
 
 
 ### Using available datasets
