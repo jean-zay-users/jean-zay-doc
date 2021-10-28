@@ -247,7 +247,7 @@ http://www.idris.fr/faqs/ssh_keys.html
 ### Automatic synchronization with your local machine
 
 The following script allows you to automatically synchronize a local directory and have an exact copy of it on jean-zay.
-For the script to run smoothly, make sure the directory is lightweight, e.g. a directory containing code. Create a file `sync_jz.sh` with
+For the script to run smoothly, make sure the directory is lightweight, e.g. a directory containing code. On your local machine, create a file `sync_jz.sh` with
 
 ```bash
 #!/bin/bash
