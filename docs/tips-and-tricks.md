@@ -244,6 +244,28 @@ To connect to the jean-zay cluster you will then just need to do `ssh jz`.
 For good practices about SSH keys you can have a look at:
 http://www.idris.fr/faqs/ssh_keys.html
 
+### Automatic synchronization with your local machine
+
+The following script allows you to automatically synchronize a local directory and have an exact copy of it on jean-zay.
+For the script to run smoothly, make sure the directory is lightweight, e.g. a directory containing code. 
+
+```bash
+#!/bin/bash
+
+local_path="/your/local/directory"
+remote_path="jz-username@jean-zay.idris.fr:/your/jean-zay/directory"
+
+while inotifywait -r -e modify,create,delete $local_path
+do
+    rsync --progress -azh $local_path $remote_path \
+        --exclude=".git"
+done
+```
+
+The synchronization is unidirectional, which means that all of the edits should be made on the local directory. Each time `inotify` detects an edit, `rsync` runs to update the remote directory.
+Any manual changes of the remote directory will be overwritten so that the remote directory matches the local one.
+`.git` is excluded from synchronization as git history directories can be heavy and are usually not necessary to run code on the cluster.
+
 ### Clone git repo
 
 SSH from Jean Zay going to the outside is very restricted. That means that if
