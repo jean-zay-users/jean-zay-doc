@@ -258,7 +258,7 @@ remote_path="jz-username@jean-zay.idris.fr:/your/jean-zay/directory"
 while inotifywait -r -e modify,create,delete $local_path
 do
     rsync --progress -azh $local_path $remote_path \
-        --exclude=".git"
+          --exclude=".git"
 done
 ```
 
