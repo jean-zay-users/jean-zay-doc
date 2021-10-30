@@ -259,7 +259,7 @@ while inotifywait -r -e modify,create,delete $source_path
 do
     rsync -azh $source_path $target_path \
           --progress \
-          --delete \
+          --delete --force \
           --exclude=".git"
 done
 ```
