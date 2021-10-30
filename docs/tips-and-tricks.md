@@ -252,12 +252,14 @@ For the script to run smoothly, make sure the directory is lightweight, e.g. a d
 ```bash
 #!/bin/bash
 
-local_path="/your/local/directory"
-remote_path="jz-username@jean-zay.idris.fr:/your/jean-zay/directory"
+source_path="/your/local/directory"
+target_path="jz-username@jean-zay.idris.fr:/your/jean-zay/directory"
 
-while inotifywait -r -e modify,create,delete $local_path
+while inotifywait -r -e modify,create,delete $source_path
 do
-    rsync --progress -azh $local_path $remote_path \
+    rsync -azh $source_path $target_path \
+          --progress \
+          --delete \
           --exclude=".git"
 done
 ```
