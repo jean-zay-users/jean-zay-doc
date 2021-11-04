@@ -264,7 +264,7 @@ do
 done
 ```
 
-To make the script executable run `chmod +x sync_jz.sh` then run `./sync_jz.sh`.
+To make the script executable run `chmod +x sync_jz.sh` then run `./sync_jz.sh`. The script has to be run in a terminal session on your local machine, you can put it in a `tmux` or `screen` terminal. To stop the sync, just stop the process. The sync will terminate with the terminal session and needs to be launched after restarting your local machine.
 
 The synchronization is unidirectional, which means that all of the edits should be made on the local directory. Each time `inotify` detects an edit, `rsync` runs to update the remote directory.
 Any manual changes of the remote directory will be overwritten so that the remote directory matches the local one.
