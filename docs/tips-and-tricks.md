@@ -1,3 +1,4 @@
+/disclamer
 # Tips and Tricks
 
 ## Bash config
@@ -396,7 +397,7 @@ docs](http://www.idris.fr/jean-zay/pre-post/jean-zay-jupyter-notebook.html).
 
 CI's workflows are not currently supported on Jean Zay (soon?).
 
-!!! warning "Disclamer"
+!!! warning "Disclaimer"
     Setting a runner on Jean Zay for your gitlab project could deduct some
     calculation time on your hours account, depending on the job it executes.
     Please be aware that anyone pushing on your repo may trigger a
