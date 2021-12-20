@@ -24,3 +24,25 @@ better a [Pull Request (PR)](https://github.com/jean-zay-users/jean-zay-doc/comp
 
 We use gitter for chat, don't hesitate to get involved
 [there](https://gitter.im/jean-zay-users/jean-zay-doc) and ask questions!
+
+# Generating the doc locally
+
+The documentation is using [mkdocs](https://www.mkdocs.org/) with a few
+plugins. To install them:
+```
+pip install -e requirements.txt
+```
+
+To run `mkdocs` in development mode:
+```
+mkdocs serve
+```
+
+This launches a local server so that you can view the generated docs in your
+browser. One very convenient feature to work on the doc is that the rendered
+HTML is updated automatically when you change a `.md` file, so you can quickly
+see the impact of your changes. The URL of the local server will be shown in
+the output of the `mkdocs serve` command, for example:
+```
+INFO     -  [15:07:11] Serving on http://127.0.0.1:8000/
+```
