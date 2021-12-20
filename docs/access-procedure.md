@@ -1,4 +1,6 @@
-# Access procedure for Jean Zay
+# Jean-Zay administrative procedures
+
+## Jean-Zay access procedure
 
 Our experience is that the access procedure for Jean Zay takes roughly 3 weeks
 (add 1-2 months on top of that if you have to go through additional security
@@ -9,7 +11,7 @@ background checks). It does seem long but it is definitely worth it.
     have no idea who they may be, your local IT may know, ask them. They may
     save you a lot of time, because they have gone through a similar procedure.
 
-## Overview of the procedure
+### Overview of the procedure
 
 Here we will focus on the easiest procedure to access Jean Zay, namely the
 "Accès dynamique" one. This procedure only applies if your research is around
@@ -41,7 +43,7 @@ is detailed in the sections below.
    step.
 6. After roughly 2 days, you should be able to connect to Jean Zay.
 
-## EDARI account (administrative account)
+### EDARI account (administrative account)
 
 !!! info "Estimate of the time needed:"
     5 minutes.
@@ -58,7 +60,7 @@ In case something goes wrong:
 - Contact for [EDARI account](https://www.edari.fr/contact)
 - [EDARI FAQ](https://www.edari.fr/faq)
 
-## "Déclaration de dossier" (project description)
+### "Déclaration de dossier" (project description)
 
 !!! info "Estimate of the time needed:"
     15 minutes (fill the form) + 1-2 days (figure out the right person to sign
@@ -86,9 +88,10 @@ When you finish filling out this part, you should something like this:
     <img src="../img/project-validate.png" width="80%" style="display: block"/>
 
 Note that in principle once your 10000 GPU hours are exhausted you can ask for
-a renewal through a similar "lightweight" procedure.
+a renewal through a similar "lightweight" procedure, see [this](#how-to-renew-hours) for more
+details.
 
-## "Déclaration de compte calcul" (computing account creation for Jean Zay)
+### "Déclaration de compte calcul" (computing account creation for Jean Zay)
 
 !!! info "Estimate of the time needed:"
     15 minutes (fill the form) + 1-2 days (figure out the right person to sign
@@ -116,7 +119,7 @@ When you finish filling out this part, you should see something like this:
     <img src="../img/computing-account-validate.png" width="80%" style="display: block"/>
 
 
-## Additional security background checks in some cases
+### Additional security background checks in some cases
 
 In some cases, the direction of IDRIS can require additional security
 background checks.
@@ -147,7 +150,7 @@ if you have better recommendations).
 
 Once this step is complete, the regular procedure applies.
 
-## IDRIS email with login and password
+### IDRIS email with login and password
 
 In principle, you should receive a "Ouverture de votre compte" email from IDRIS
 roughly one week after having completed the previous step. Contact:
@@ -162,7 +165,7 @@ a week.
   time is needed for the IP address to be added to Jean Zay.
 
 
-## How to add additionnal IP addresses to your authorised IP addresses
+### How to add additionnal IP addresses to your authorised IP addresses
 
 !!! info "Estimate of the time needed:"
     15 minutes (fill the form) + 1-2 days (figure out the right person to sign
@@ -178,7 +181,7 @@ To add additionnal IP addresses to those mentioned on your original declaration:
 - e-mail the signed form to gestutil@idris.fr and wait 1-2 days until the change
   actually takes effect.
 
-# How to write a project proposal (only needed if you request more than 10k GPU hours)
+## How to write a project proposal (only needed if you request more than 10k GPU hours)
 
 !!! info "Estimate of the time needed:"
     1h (write a project) + a few days/weeks for approval (depending on the
@@ -205,3 +208,49 @@ you would like to ask for more than 10k GPU hours.
   is definitely a plus.
 
 Depending on your request, this proposal can be reviewed by 1 to 10 people.
+
+## How to renew hours
+
+!!! info "Estimate of the time needed:"
+    30 minutes (fill the form and write an activity report) + 1-2 days (figure
+    out the right person to sign the form and get him/her to sign it).
+
+Hours are allocated for one year so you need to renew them after one year. You
+will get a reminder email roughly one month in advance. The same procedure
+applies if you have used almost all your hours and you want to ask for more.
+
+The procedure is fully detailed
+[here](http://www.idris.fr/eng/info/gestion/demande-heures/documentation-ad/renouvellement-dossier-ad-eng.html)
+but here is a short summary to know what to expect:
+
+- the procedure happens on https://www.edari.fr/utilisateur. The main thing is
+  to ask for the number hours you want (GPU and potentially CPU).
+- you need to write an activity report (PDF), about half a page should be
+  enough. The main idea is to show that you made good use of the hours, for
+  example by listing publications. There is an activity report template
+  [here](http://www.idris.fr/media/ia/ressources/modele-rapport-ad.pdf) (in
+  French) that may help you. Also remember to acknowledge Jean-Zay in your
+  article (see [this](#how-to-cite-jean-zay-in-your-article) for more details).
+- download a PDF summarizing your renewal application, get it signed by your
+  "directeur de recherche" and upload it on the EDARI website. In some cases
+  this step happens automatically (the "directeur de recherche" gets an
+  automated email and can validate your project directly)
+
+## How to cite Jean-Zay in your article
+
+This is important if you want Jean-Zay to get the credit it deserves and may
+help to get more funding and eventually to get more compute nodes.
+
+Add this to your acknowledgments:
+
+> This work was performed using HPC resources from GENCI–IDRIS (Grant [year]-[project number])
+
+for example (if you project was allocated hours in 2021 and your project number
+is AD12345678):
+
+> This work was performed using HPC resources from GENCI–IDRIS (Grant 2021-AD12345678)
+
+You can find your project number in eDARI: https://www.edari.fr/utilisateur
+
+The official guidelines for Jean-Zay citation are available here:
+http://www.idris.fr/eng/info/gestion/remerciements-eng.html
