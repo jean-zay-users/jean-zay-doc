@@ -25,6 +25,18 @@ better a [Pull Request (PR)](https://github.com/jean-zay-users/jean-zay-doc/comp
 We use gitter for chat, don't hesitate to get involved
 [there](https://gitter.im/jean-zay-users/jean-zay-doc) and ask questions!
 
+# See the generated doc in a PR
+
+You can see the generated doc in a PR at the bottom of the PR page. This allows
+you to double-check that the rendered HTML looks the way you intended.
+
+It will look like the screenshot below. To view the generated doc you can click
+on the "Details" link:
+![](https://user-images.githubusercontent.com/1680079/146903507-d56addb6-c038-4d01-a151-933a8f261af2.png)
+
+You can also generate the doc locally, see [this](#generating-the-doc-locally)
+for instructions.
+
 # Generating the doc locally
 
 The documentation is using [mkdocs](https://www.mkdocs.org/) with a few
