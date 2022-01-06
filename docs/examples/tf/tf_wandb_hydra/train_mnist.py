@@ -1,5 +1,10 @@
 # all taken from https://www.tensorflow.org/guide/keras/functional
+from pathlib import Path
+
 import hydra
+from omegaconf import OmegaConf
+import wandb
+from wandb.keras import WandbCallback
 
 
 @hydra.main(config_path='../conf', config_name='config')
@@ -37,19 +42,23 @@ def train_dense_model(cfg):
     import tensorflow as tf
     from tensorflow import keras
     from tensorflow.keras import layers
+
+    # wandb setup
+    Path(cfg.wandb.dir).mkdir(exist_ok=True, parents=True)
+    wandb.init(
+        config=OmegaConf.to_container(cfg, resolve=True),
+        **cfg.wandb,
+    )
+    callbacks = [
+        WandbCallback(monitor='loss', save_weights_only=True),
+    ]
+
     # model building
-    tf.keras.backend.clear_session()  # For easy reset of notebook state.
-
-    
+    tf.keras.backend.clear_session()
     model = my_model(**cfg.model)
-
     model_compile(model, **cfg.compile)
-
-    
     x_train, x_test, y_train, y_test = data(**cfg.data)
-
-
-    history = model.fit(x_train, y_train, **cfg.fit)
+    history = model.fit(x_train, y_train, **cfg.fit, callbacks=callbacks)
     test_scores = model.evaluate(x_test, y_test, verbose=2)
     print('Test loss:', test_scores[0])
     print('Test accuracy:', test_scores[1])
