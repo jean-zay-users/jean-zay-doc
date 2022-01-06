@@ -1,0 +1,17 @@
+defaults:
+  - submitit_slurm
+
+timeout_min: null
+gpus_per_node: 1
+tasks_per_node: 1
+gres: "gpu:${hydra.launcher.gpus_per_node}"
+qos: qos_gpu-dev
+cpus_per_gpu: 10
+gpus_per_task: ${hydra.launcher.gpus_per_node}
+additional_parameters:
+  account: ${project-id}@gpu
+  distribution: "block:block"
+  hint: nomultithread
+  time: "${hours}:00:00"
+setup:
+  - "#SBATCH -C v100-32g"
