@@ -1,6 +1,7 @@
 # all taken from https://www.tensorflow.org/guide/keras/functional
 import hydra
 
+
 @hydra.main(config_path='../conf', config_name='config')
 def train_dense_model_main(cfg):
     return train_dense_model(cfg)
@@ -13,7 +14,7 @@ def my_model(input_shape=784, output_num=10, activation='relu', hidden_size=64):
     outputs = layers.Dense(output_num)(x)
     return keras.Model(inputs=inputs, outputs=outputs, name='mnist_model')
 
-def model_compile(model, loss, optimizer='rmsprop'):
+def model_compile(model, loss='xent', optimizer='rmsprop'):
     if loss == 'xent':
         loss = keras.losses.SparseCategoricalCrossentropy(from_logits=True)
     model.compile(loss=loss,
