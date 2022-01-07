@@ -3,8 +3,6 @@ from pathlib import Path
 
 import hydra
 from omegaconf import OmegaConf
-import wandb
-from wandb.keras import WandbCallback
 
 
 @hydra.main(config_path='conf', config_name='config')
@@ -42,6 +40,8 @@ def train_dense_model(cfg):
     import tensorflow as tf
     from tensorflow import keras
     from tensorflow.keras import layers
+    import wandb
+    from wandb.keras import WandbCallback
 
     # wandb setup
     Path(cfg.wandb.dir).mkdir(exist_ok=True, parents=True)
