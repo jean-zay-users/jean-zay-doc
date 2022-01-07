@@ -7,7 +7,7 @@ import wandb
 from wandb.keras import WandbCallback
 
 
-@hydra.main(config_path='../conf', config_name='config')
+@hydra.main(config_path='conf', config_name='config')
 def train_dense_model_main(cfg):
     return train_dense_model(cfg)
 
