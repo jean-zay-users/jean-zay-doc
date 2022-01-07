@@ -19,7 +19,7 @@ pip install --user -r $WORK/jean-zay-doc/docs/examples/tf/tf_wandb_hydra/require
 ## Run
 In order to run the example on SLURM you can just issue the following command from the example directory:
 ```
-python train_mnist.py --multirun hydra/launcher=base +project-id=yyy +hours=1
+python train_mnist.py --multirun hydra/launcher=base +project_id=yyy +hours=1
 ```
 where `yyy` is your Jean Zay project id.
 
@@ -27,12 +27,12 @@ where `yyy` is your Jean Zay project id.
 Different parameters can be set for the SLURM job, using the `hydra.launcher` config group.
 For example to launch a longer job, you can use:
 ```
-python train_mnist.py --multirun hydra/launcher=base +project-id=yyy +hours=10 hydra.launcher.qos=qos_gpu-t3
+python train_mnist.py --multirun hydra/launcher=base +project_id=yyy +hours=10 hydra.launcher.qos=qos_gpu-t3
 ```
 
 If you want to use more gpus:
 ```
-python train_mnist.py --multirun hydra/launcher=base +project-id=yyy +hours=10 hydra.launcher.qos=qos_gpu-t3 hydra.launcher.gpus_per_node=4
+python train_mnist.py --multirun hydra/launcher=base +project_id=yyy +hours=10 hydra.launcher.qos=qos_gpu-t3 hydra.launcher.gpus_per_node=4
 ```
 
 ### Weights&Biases
@@ -49,12 +49,12 @@ You can change this value by setting the `hydra.dir` config variable.
 In order to batch multiple similar jobs you can use the sweep feature of Hydra.
 For example, if you want to run multiple training with different batch sizes, you can do the following:
 ```
-python train_mnist.py --multirun hydra/launcher=base +project-id=yyy +hours=1 fit.batch_size=32,64,128
+python train_mnist.py --multirun hydra/launcher=base +project_id=yyy +hours=1 fit.batch_size=32,64,128
 ```
 
 This can be extended to the grid search of a Cartesian product for example:
 ```
-python train_mnist.py --multirun hydra/launcher=base +project-id=yyy +hours=1 fit.batch_size=32,64,128 compile.optimizer=rmsprop,adam
+python train_mnist.py --multirun hydra/launcher=base +project_id=yyy +hours=1 fit.batch_size=32,64,128 compile.optimizer=rmsprop,adam
 ```
 
 ## Similar resources
