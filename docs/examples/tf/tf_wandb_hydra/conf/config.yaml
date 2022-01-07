@@ -11,11 +11,14 @@ fit:
   batch_size: 64
   validation_split: 0.2
 
+compile:
+  optimizer: rmsprop
+
 wandb:
   project: jean-zay-doc
   notes: "Hydra-wandb-submitit exp"
   tags:
     - hydra
     - tuto
-  dir: "${oc.env:SCRATCH}/wandb/jean-zay-doc"
+  dir: "${oc.env:SCRATCH,.}/wandb/jean-zay-doc"
   mode: null
