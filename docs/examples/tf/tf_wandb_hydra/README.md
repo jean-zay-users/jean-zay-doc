@@ -27,12 +27,12 @@ where `yyy` is your Jean Zay project id.
 Different parameters can be set for the SLURM job, using the `hydra.launcher` config group.
 For example to launch a longer job, you can use:
 ```
-python train_mnist.py --multirun hydra/launcher=base +project_id=yyy +hours=10 hydra.launcher.qos=qos_gpu-t3
+python train_mnist.py --multirun hydra/launcher=base +project_id=yyy +hours=10 hydra.launcher.qos='qos_gpu-t3'
 ```
 
 If you want to use more gpus:
 ```
-python train_mnist.py --multirun hydra/launcher=base +project_id=yyy +hours=10 hydra.launcher.qos=qos_gpu-t3 hydra.launcher.gpus_per_node=4
+python train_mnist.py --multirun hydra/launcher=base +project_id=yyy +hours=10 hydra.launcher.qos='qos_gpu-t3' hydra.launcher.gpus_per_node=4
 ```
 
 ### Weights&Biases
@@ -65,6 +65,10 @@ python train_mnist.py --multirun hydra/launcher=base +project_id=yyy +hours=1 fi
 python train_mnist.py -m hydra/launcher=base\
  'hydra.searchpath=[pkg://jean_zay/hydra_config]'\
   +hours=1 additional_parameters.account=yyy@gpu +project=project_name
+```
+or equivalently:
+```
+submitit-hydra-launch train_mnist.py base +hours=1 additional_parameters.account=yyy@gpu +project=project_name
 ```
 
 
