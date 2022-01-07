@@ -1,7 +1,7 @@
 defaults:
   - submitit_slurm
 
-timeout_min: null
+timeout_min: 60
 gpus_per_node: 1
 tasks_per_node: 1
 gres: "gpu:${hydra.launcher.gpus_per_node}"
