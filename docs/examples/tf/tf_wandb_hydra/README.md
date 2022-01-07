@@ -39,7 +39,7 @@ python train_mnist.py --multirun hydra/launcher=base +project_id=yyy +hours=10 h
 `wandb` is run offline because the compute nodes are not connected to the internet.
 In order to have the results uploaded to the cloud, you need to manually sync them using the `wandb sync run_dir` command.
 The run directories are located in `$SCRATCH/wandb/jean-zay-doc`, but this can be changed using the `wandb.dir` config variable.
-You can also run a script to sync the runs before they are finished on a front node, for example using the script [here](https://github.com/zaccharieramzi/submission-scripts/blob/master/jean_zay/syncall_wandb.sh).
+You can also run a script to sync the runs before they are finished on a front node, for example using the script [here](https://github.com/zaccharieramzi/submission-scripts/blob/master/jean_zay/syncall-wandb).
 
 ### Hydra and submitit outputs
 The outputs created by Hydra and submitit are located in the `multirun` directory.
