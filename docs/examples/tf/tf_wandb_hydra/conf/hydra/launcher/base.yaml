@@ -9,7 +9,7 @@ qos: qos_gpu-dev
 cpus_per_gpu: 10
 gpus_per_task: ${hydra.launcher.gpus_per_node}
 additional_parameters:
-  account: ${oc.env:IDRPROJ,${project_id}}@gpu
+  account: ${oc.env:IDRPROJ}@gpu
   distribution: "block:block"
   hint: nomultithread
   time: "${hours}:00:00"
