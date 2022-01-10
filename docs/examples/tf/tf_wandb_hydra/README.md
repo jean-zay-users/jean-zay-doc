@@ -1,5 +1,10 @@
 # [Weights&Biases - Hydra](https://github.com/jean-zay-users/jean-zay-doc/tree/master/docs/examples/tf/tf_wandb_hydra)
 
+Weights&Biases and Hydra are 2 tools used in Machine Learning Projects.
+Weights&Biases allows you to easily save a lot of information about your different experiments in the cloud, like meta data, system data, model weights and of course your different metrics and logs.
+Hydra is a configuration management tool that allows you to build command line interfaces and create robust and readable configuration files.
+These 2 tools can be used together very elegantly and easily, but their setup on Jean Zay is not straightforward.
+In this example, we will show you how to setup both tools on Jean Zay in a TensorFlow example.
 
 ## Installation
 
@@ -76,3 +81,13 @@ submitit-hydra-launch train_mnist.py base +hours=1 additional_parameters.account
 - Hydra: https://hydra.cc/
 - Submitit: https://github.com/facebookincubator/submitit
 - Hydra submitit launcher: https://hydra.cc/docs/plugins/submitit_launcher/
+
+## Alternatives
+
+To Weights&Biases:
+- MLFlow
+- Tensorboard
+
+To Hydra:
+- argparse
+- click
