@@ -66,7 +66,7 @@ python train_mnist.py --multirun hydra/launcher=base +hours=1 fit.batch_size=32,
 - [slurm-hydra-submitit](https://github.com/RaphaelMeudec/slurm-hydra-submitit) presents a similar concept in a more general case for any SLURM cluster, without W&B. In particular, it specifies [how to run specific parameters combinations grid search](https://github.com/RaphaelMeudec/slurm-hydra-submitit#specific-parameters-combinations).
 - [jz-hydra-submitit-launcher](https://github.com/zaccharieramzi/jz-hydra-submitit-launcher) a pip installable (`pip install jz-hydra-submitit-launcher`) custom launcher that has the correct default for JZ, and several default configurations:
 ```
-hydra-submitit-launch train_mnist.py dev
+hydra-submitit-launch train_mnist.py dev hydra.launcher.setup=\["'#SBATCH -C v100-32g'","'export WANDB_MODE=offline'"\]
 ```
 
 
