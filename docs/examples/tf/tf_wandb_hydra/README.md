@@ -64,15 +64,9 @@ python train_mnist.py --multirun hydra/launcher=base +hours=1 fit.batch_size=32,
 ## Similar resources
 
 - [slurm-hydra-submitit](https://github.com/RaphaelMeudec/slurm-hydra-submitit) presents a similar concept in a more general case for any SLURM cluster, without W&B. In particular, it specifies [how to run specific parameters combinations grid search](https://github.com/RaphaelMeudec/slurm-hydra-submitit#specific-parameters-combinations).
-- [submission-scripts](https://github.com/zaccharieramzi/submission-scripts/tree/master/jean_zay/hydra_config) includes a packaged hydra submitit launcher config for the Jean Zay cluster. In particular this means that instead of having to copy over the launcher configuration, you can install this package (`pip install --user submission-scripts`), and use the launcher as follows (`-m` is equivalent to `--multirun`) if `yyy` is your project id (`echo $IDRPROJ`):
+- [jz-hydra-submitit-launcher](https://github.com/zaccharieramzi/jz-hydra-submitit-launcher) a pip installable (`pip install jz-hydra-submitit-launcher`) custom launcher that has the correct default for JZ, and several default configurations:
 ```
-python train_mnist.py -m hydra/launcher=base\
- 'hydra.searchpath=[pkg://jean_zay/hydra_config]'\
-  +hours=1 additional_parameters.account=yyy@gpu +project=project_name
-```
-or equivalently:
-```
-submitit-hydra-launch train_mnist.py base +hours=1 additional_parameters.account=yyy@gpu +project=project_name
+hydra-submitit-launch train_mnist.py dev
 ```
 
 
