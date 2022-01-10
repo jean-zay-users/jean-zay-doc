@@ -14,5 +14,6 @@ additional_parameters:
   hint: nomultithread
   time: "${hours}:00:00"
 setup:
-  - "#SBATCH -C v100-32g"
+  - "#SBATCH -C v100-32g"  # this setup is needed here and not in additional parameters
+  # because otherwise it will be difficult to remove at run time.
   - "export WANDB_MODE=offline"
