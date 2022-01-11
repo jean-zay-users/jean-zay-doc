@@ -40,6 +40,7 @@ python train_mnist.py --multirun hydra/launcher=base +hours=10 hydra.launcher.qo
 ```
 
 ### Weights&Biases
+This will require you to create a [Weights&Biases account](https://wandb.ai/).
 `wandb` is run offline because the compute nodes are not connected to the internet.
 In order to have the results uploaded to the cloud, you need to manually sync them using the `wandb sync run_dir` command.
 The run directories are located in `$SCRATCH/wandb/jean-zay-doc`, but this can be changed using the `wandb.dir` config variable.
