@@ -73,3 +73,4 @@ nav:
       - Single node: examples/tf/tf_simple/README.md
       - Distributed with SlurmClusterResolver: examples/tf/tf_distributed/README.md
       - Distributed with Horovod: examples/tf/tf_mpi/README.md
+      - Weights&Biases and Hydra: examples/tf/tf_wandb_hydra/README.md
