@@ -1,0 +1,24 @@
+data:
+  n_features: 784
+  n_classes: 10
+
+model:
+  input_shape: ${data.n_features}
+  output_num: ${data.n_classes}
+
+fit:
+  epochs: 5
+  batch_size: 64
+  validation_split: 0.2
+
+compile:
+  optimizer: rmsprop
+
+wandb:
+  project: jean-zay-doc
+  notes: "Hydra-wandb-submitit exp"
+  tags:
+    - hydra
+    - tuto
+  dir: "${oc.env:SCRATCH,.}/wandb/jean-zay-doc"
+  mode: null
