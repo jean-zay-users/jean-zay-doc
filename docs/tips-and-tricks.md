@@ -1,4 +1,4 @@
-# Tips and Tricks
+# Main tips and tricks
 
 ## Bash config
 

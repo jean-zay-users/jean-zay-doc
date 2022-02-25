@@ -61,7 +61,9 @@ plugins:
 nav:
   - Home: index.md
   - Access procedure: access-procedure.md
-  - Tips and Tricks: tips-and-tricks.md
+  - Tips and Tricks:
+    - Main tips and tricks: tips-and-tricks.md
+    - Singularity: singularity.md
   - Limitations: limitations.md
   - Examples:
     - Pytorch examples:

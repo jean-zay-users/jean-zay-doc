@@ -4,16 +4,6 @@ a [Pull Request](https://github.com/jean-zay-users/jean-zay-doc/compare)!
 
 # Limitations
 
-## Singularity/docker image usage
-
-There is currently no way of using a docker image on Jean Zay. They are working
-on it but at the time of writing (end January 2020) it is likely to take
-between 3 and 6 months so be ready for some time between May and August 2020.
-
-**Update (novemeber 2020): Singularity is available. See here for the full
-official documentation:
-http://www.idris.fr/eng/jean-zay/cpu/jean-zay-utilisation-singularity-eng.html**
-
 ## SSH port forwarding disabled
 
 SSH port forwarding is disabled by Jean Zay sys-admin for security reasons.
