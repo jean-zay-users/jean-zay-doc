@@ -31,7 +31,7 @@ is detailed in the sections below.
    informatique" is and have the form signed by him/her as well as the
    "Directeur de la structure de recherche". You also need to declare one (or
    more) IP address(es) that will be able to use to connect to Jean Zay. See
-   [this](#d%C3%A9claration-de-compte-calcul-computing-account-creation-for-jean-zay)
+   [this](#declaration-de-compte-calcul-computing-account-creation-for-jean-zay)
    for all the details about this step.
 4. Additional security background checks in some cases. Unfortunately
    this takes 1-2 additional months. See

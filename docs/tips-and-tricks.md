@@ -1,4 +1,3 @@
-/disclamer
 # Tips and Tricks
 
 ## Bash config
