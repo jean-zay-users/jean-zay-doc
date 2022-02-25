@@ -36,8 +36,9 @@ spython recipe Dockerfile > Singularity
 
 ### Building step
 
-Yon can [build a container directly from the cluster](http://www.idris.fr/eng/jean-zay/cpu/jean-zay-utilisation-singularity-eng.html),
-only if the building operation does not need any sudo rights.
+As per the [official Jean-Zay doc](http://www.idris.fr/eng/jean-zay/cpu/jean-zay-utilisation-singularity-eng.html),
+you can build a container directly from the cluster but only if the building
+operation does not need any sudo rights.
 
 It is generally not the case, so you'll want to build the container on your own
 machine:
