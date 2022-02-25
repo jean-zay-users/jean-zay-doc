@@ -34,7 +34,16 @@ Yon can [build a container directly from the cluster](http://www.idris.fr/eng/je
 It is generally not the case, so you'll want to build the container on your own machine:
 
 ``` bash
-sudo singularity build my_container.sif Singularity 
+singularity build my_container.sif Singularity 
+```
+
+Note that you can also build a Singularity container from a Docker container:
+
+``` bash
+# from docker hub
+singularity build my_container.sif docker://ubunut:20.04
+# or from a local image:
+singularity build my_container.sif docker-deamon://my-awesome-image:latest
 ```
 
 ## 2. Transfer
@@ -65,7 +74,7 @@ You might want to bind local folders to your container using this script `singul
 
 ```bash
 module load singularity
-singularity shell  --nv --bind $WORK:$WORK,$SCRATCH:$SCRATCH,$STORE:$STORE,/gpfslocalsup:/gpfslocalsup/,/gpfslocalsys:/gpfslocalsys,/gpfs7kw:/gpfs7kw,/gpfsssd:/gpfsssd,/gpfsdsmnt:/gpfsdsmnt,/gpfsdsstore:/gpfsdsstore $SINGULARITY_ALLOWED_DIR/$1
+singularity shell  --nv --bind $WORK:$WORK,$SCRATCH:$SCRATCH,$STORE:$STORE $SINGULARITY_ALLOWED_DIR/$1
 ```
 
 Remove `--nv` if you don't use a GPU partition.
