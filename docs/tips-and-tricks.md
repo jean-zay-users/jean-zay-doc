@@ -33,7 +33,7 @@ conda update --yes conda
 conda init
 ```
 
-If you run out of space or inodes on `$WORK` (`irdquota -w` can help you
+If you run out of space or inodes on `$WORK` (`idrquota -w` can help you
 figuring out whether you are close to the limit) you can send an email to
 [assist@idris.fr](mailto:assist@idris.fr) and ask for an increase. Try
 something between 5x-10x with some small justification and that should go
