@@ -76,3 +76,5 @@ nav:
       - Distributed with SlurmClusterResolver: examples/tf/tf_distributed/README.md
       - Distributed with Horovod: examples/tf/tf_mpi/README.md
       - Weights&Biases and Hydra: examples/tf/tf_wandb_hydra/README.md
+    - Dask examples:
+      - Through xarray: examples/dask/xarray/README.md
