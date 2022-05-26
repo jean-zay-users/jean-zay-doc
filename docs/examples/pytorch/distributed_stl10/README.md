@@ -4,7 +4,7 @@ stl10_example.py is based on [https://github.com/pytorch/examples/tree/master/im
 
 You can then launch the job with:
 ```
-cd jean-zay-doc/examples/pytorch/distributed_stl10/
+cd jean-zay-doc/docs/examples/pytorch/distributed_stl10/
 sbatch ./pytorch_distributed_stl10_example.sh
 ```
 
