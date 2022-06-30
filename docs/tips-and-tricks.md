@@ -218,7 +218,7 @@ rsync -avz /your/local/database/ \
 
 ### Changing the default file permission sets to make collaboration easier
 
-By default, users has a umask value (i.e. the default file permission sets for newly created files and folders) of 0027, which in symbolic notation translates to `u=rwx,g=rx,o=`. That means if you have colleagues assigned to the same project/group, they won't have write permissions on the files and directories you create, which can be annoying if you want to collaborate in a common disk space such as `$ALL_CCFRWORK`. To add group-write permissions by default, you can execute `umask 007` which will change the umask value for the current shell session; or to make it permanent, add the line `umask 007` at the beginning of your `~/.bash_profile`.
+By default, users have a umask value (i.e. the default file permission set for newly created files and folders) of 0027, which in symbolic notation translates to `u=rwx,g=rx,o=`. That means if you have colleagues assigned to the same project/group, they won't have write permissions on the files and directories you create, which can be annoying if you want to collaborate in a common disk space such as `$ALL_CCFRWORK`. To add group-write permissions by default, you can execute `umask 007` which will change the umask value for the current shell session; or to make it permanent, add the line `umask 007` at the beginning of your `~/.bash_profile`.
 
 ### Using available datasets
 
