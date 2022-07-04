@@ -2,14 +2,13 @@
 
 ## Bash config
 
-By default, the `.bashrc` is not executed when connecting on the cluster.
-To make sure it is run, add a file `~/.bash_profile` with
+The `.bashrc` file is only executed when opening interactive shells on the cluster, while the `.bash_profile` file is only executed when logging in.
+To make sure the `.bashrc` is run when logging in, modify your `~/.bash_profile` so that it contains the following lines:
 
 ```bash
 #
-# ~/.bash_profile
+# Source ~/.bashrc from ~/.bash_profile
 #
-
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 ```
 
