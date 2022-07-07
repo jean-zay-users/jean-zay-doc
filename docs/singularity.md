@@ -53,7 +53,8 @@ Note that you can also build a Singularity container from a Docker container:
 # from docker hub
 singularity build my_container.sif docker://ubuntu:20.04
 # or from a local image:
-singularity build my_container.sif docker-deamon://my-awesome-image:latest
+docker build -t my-awesome-image:latest /path/to/dir/with/Dockerfile
+singularity build my_container.sif docker-daemon://my-awesome-image:latest
 ```
 
 ## 2. Transfer
