@@ -251,6 +251,7 @@ is AD12345678):
 > This work was performed using HPC resources from GENCI–IDRIS (Grant 2021-AD12345678)
 
 You can find your project number in eDARI: https://www.edari.fr/utilisateur
+When connected via `ssh` to the Jean-Zay cluster, you can also know your project number (as well as your remaining budget) using the command line `idracct`.
 
 The official guidelines for Jean-Zay citation are available here:
 http://www.idris.fr/eng/info/gestion/remerciements-eng.html
