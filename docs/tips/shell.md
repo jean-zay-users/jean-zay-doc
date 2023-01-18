@@ -10,3 +10,9 @@ To make sure the `.bashrc` is run when logging in, modify your `~/.bash_profile`
 # Source ~/.bashrc from ~/.bash_profile
 #
 [[ -f ~/.bashrc ]] && . ~/.bashrc
+```
+
+## Other shells (csh, zsh, tcsh, fish, etc)
+
+Other shell different of Bourne Shell (sh) are not officially supported in Jean Zay. 
+However, [people discuss frequently how to short-cut this constraint](https://github.com/jean-zay-users/jean-zay-doc/issues/18).
