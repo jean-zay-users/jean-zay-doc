@@ -1,179 +1,6 @@
-# Main tips and tricks
+# Miscellaneous
 
-## Bash config
-
-The `.bashrc` file is only executed when opening interactive shells on the cluster, while the `.bash_profile` file is only executed when logging in.
-To make sure the `.bashrc` is run when logging in, modify your `~/.bash_profile` so that it contains the following lines:
-
-```bash
-#
-# Source ~/.bashrc from ~/.bash_profile
-#
-[[ -f ~/.bashrc ]] && . ~/.bashrc
-```
-
-## Python
-
-### Install miniconda (recommended solution if you are already familiar with conda)
-
-Install `miniconda` in `$WORK/miniconda3`:
-
-```bash
-# download Miniconda installer
-wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh \
-    -O miniconda.sh
-# install Miniconda
-MINICONDA_PATH=$WORK/miniconda3
-chmod +x miniconda.sh && ./miniconda.sh -b -p $MINICONDA_PATH
-# make sure conda is up-to-date
-source $MINICONDA_PATH/etc/profile.d/conda.sh
-conda update --yes conda
-# Update your .bashrc to initialise your conda base environment on each login
-conda init
-```
-
-If you run out of space or inodes on `$WORK` (`idrquota -w` can help you
-figuring out whether you are close to the limit) you can send an email to
-[assist@idris.fr](mailto:assist@idris.fr) and ask for an increase. Try
-something between 5x-10x with some small justification and that should go
-through without too much problem (if that's not the case, open an
-[issue](https://github.com/jean-zay-users/jean-zay-doc/issues/new) to improve
-this doc!).
-
-## SLURM
-
-### How to launch an interactive job
-
-Your can use `srun` to launch an interactive job.
-
-For example, if you want to use a node with 4 GPUs during 1 hour, you can type:
-
-```bash
-srun --ntasks=1 --cpus-per-task=40 --gres=gpu:4 --time=01:00:00 \
-     --qos=qos_gpu-dev --pty bash -i
-```
-
-Now, you have a brand new shell on a compute node where you can run your scripts interactively
-during 1h.
-
-### Overview of cluster usage
-
-```bash
-sinfo -p gpu_p1,gpu_p2 -o"%P %.16F"
-```
-
-Output is something like this:
-
-```bash
-PARTITION   NODES(A/I/O/T)
-gpu_p1      258/0/2/260
-gpu_p2       15/16/0/31
-```
-
-A = allocated, I = idle, O = other, T = total
-
-### How to connect to the node of a launched GPU job
-
-This can be useful to do lightweight monitoring of your job, for example to
-look at `nvidia-smi` output while your job is running.
-
-You can directly connect to a node used by one of your jobs with SSH:
-
-```bash
-ssh node-name
-```
-You can get the `node-name` information from the `squeue -u $USER` command. For example, `r7in10`
-or `jean-zay-ia816` are valid node names.
-
-If you don't have a job running on the node you will get an error like this:
-
-```
-Access denied by pam_slurm_adopt: you have no active jobs on this node
-Connection closed by 10.148.8.45 port 22
-```
-
-Caveat (September 2020) : if you have multiple jobs running on the same node it
-is not possible to specify which job you want to connect to.
-
-Have a look at the [official doc](
-http://www.idris.fr/eng/jean-zay/jean-zay-connexion_ssh_noeud_calcul-eng.html)
-about this as well.
-
-### Auto Requeue on timeouts
-
-Sometimes you want your script to run longer than the maximum walltime of a
-particular Slurm queue, for example if you want to train a model for more than
-1 day on the `gpu_p1` queue or more than 5 days on the `gpu_p2` queue.  One
-work-around for this use case is to take a snapshot of your model regularly and
-automatically relaunch a job (and start from this snapshot) once it reaches the
-maximum walltime limit.
-
-It is possible to ask Slurm to send a signal before the job timeouts, handle it
-in Python and automatically requeue a similar job.
-
-You need to add the following to your Slurm submission script:
-
-```bash
-# asks SLURM to send the USR1 signal 20 seconds before the end of the time limit
-#SBATCH --signal=USR1@20
-```
-
-And handle the signal in Python:
-
-```python
-import os
-import socket
-import signal
-import sys
-import logging
-
-from pathlib import Path
-
-logger = logging.getLogger(__name__)
-
-def sig_handler(signum, frame):
-    logger.warning("Signal handler called with signal " + str(signum))
-    prod_id = int(os.environ['SLURM_PROCID'])
-    logger.warning("Host: %s - Global rank: %i" % (socket.gethostname(), prod_id))
-    if prod_id == 0:
-        logger.warning("Requeuing job " + os.environ['SLURM_JOB_ID'])
-        os.system('scontrol requeue ' + os.environ['SLURM_JOB_ID'])
-    else:
-        logger.warning("Not the master process, no need to requeue.")
-    sys.exit(-1)
-
-
-def init_signal_handler():
-    """
-    Handle signals sent by SLURM for time limit.
-    """
-    signal.signal(signal.SIGUSR1, sig_handler)
-    logger.warning("Signal handler installed.")
-
-...
-# In main
-
-# Makes sure that we start from where we ended in the previous job
-checkpoint = Path("my_job.pt")
-if checkpoint.exists():
-    load(checkpoint)
-
-init_signal_handler()
-
-for _ in range(epochs):
-    ...
-    save(checkpoint)
-
-```
-
-!!! warning
-    Remember to also add a serialization logic to your objects to make sure
-    your new job start from where your previous job ended. In the above case,
-    we will restart from the previous epoch checkpoint.
-
-## Miscellaneous
-
-### Managing your data and the storage spaces
+## Managing your data and the storage spaces
 
 Be careful about the place where you put your data on the JZ super-computer,
 since there are quotas for each project, depending on the storage space and the
@@ -206,7 +33,8 @@ If you need to send data to Jean-Zay a good idea is to use `rsync`. E.g.:
 rsync -avz /your/local/database/ \
     your-jean-zay-login@jean-zay:/gpfsscratch/your/remote/dir/
 ```
-### Requesting extra inodes or extra storage space
+
+## Requesting extra inodes or extra storage space
 
 1. Create a password for the extranet from the command line program `passextranet`.
 2. Connect to the extranet (`https://extranet.idris.fr`) from an approved machine with your Jean-Zay username and this above password.
@@ -215,11 +43,11 @@ rsync -avz /your/local/database/ \
 !!! warning
     The number of inodes seem to be a bottleneck for Jean-Zay platform. Do not expect a too high number of obtained requests.
 
-### Changing the default file permission sets to make collaboration easier
+## Changing the default file permission sets to make collaboration easier
 
 By default, users have a umask value (i.e. the default file permission set for newly created files and folders) of 0027, which in symbolic notation translates to `u=rwx,g=rx,o=`. That means if you have colleagues assigned to the same project/group, they won't have write permissions on the files and directories you create, which can be annoying if you want to collaborate in a common disk space such as `$ALL_CCFRWORK`. To add group-write permissions by default, you can execute `umask 007` which will change the umask value for the current shell session; or to make it permanent, add the line `umask 007` at the beginning of your `~/.bash_profile`.
 
-### Using available datasets
+## Using available datasets
 
 Common datatsets are available on `$DSDIR`. When a dataset is zipped, like COCO,
 you can unzip it in `$SCRATCH` with `unzip -DD` or `tar -m` to use the dates from archive
@@ -227,7 +55,7 @@ extraction time rather than (the default) to use the dates of the original files
 This will prevent the wipe of your freshly unzipped dataset.
 If raw data is directly available such as for the ImageNet dataset, you can read datasets from `$DSDIR` directly without the need to copy the dataset to `$SCRATCH`.
 
-### Connect seamlessly from your local machine
+## Connect seamlessly from your local machine
 
 Add local your public ssh key to the `~/.ssh/authorized_keys` of your account on the jean-zay cluster.
 Your local public ssh key can be found in `~/.ssh/id_rsa.pub`.
@@ -245,7 +73,7 @@ To connect to the jean-zay cluster you will then just need to do `ssh jz`.
 For good practices about SSH keys you can have a look at:
 http://www.idris.fr/faqs/ssh_keys.html
 
-### Automatic synchronization with your local machine
+## Automatic synchronization with your local machine
 
 The following script allows you to automatically synchronize a local directory and have an exact copy of it on jean-zay.
 For the script to run smoothly, make sure the directory is lightweight, e.g. a directory containing code. On your local machine, create a file `sync_jz.sh` with
@@ -277,7 +105,7 @@ The synchronization is unidirectional, which means that all of the edits should 
 Any manual change of the remote directory will be overwritten so that the remote directory matches the local one.
 `.git` is excluded from synchronization as git history directories can be heavy and are usually not necessary to run code on the cluster.
 
-### Clone git repo
+## Clone git repo
 
 SSH from Jean Zay going to the outside is very restricted. That means that if
 you are used to do
@@ -309,12 +137,12 @@ http://www.idris.fr/media/data/formulaires/fgc.pdf, mostly the section "Ajout,
 modification ou suppression de machines".
 
 
-### Tensorboard
+## Tensorboard
 
 Tensorboard is a nice tool to monitor the progress of your trainings.
 Currently there are 3 (known) ways to use it in Jean Zay:
 
-#### Run sshfs + Tensorboard locally
+### Run sshfs + Tensorboard locally
 
 The idea is to:
 
@@ -368,7 +196,7 @@ This will open a new tab in your local browser and show the progress of your tra
     If you have better advice to prevent or recover from disconnections, please
     improve this doc!
 
-#### Use Tensorboard dev
+### Use Tensorboard dev
 
 [Tensorboard dev](https://tensorboard.dev/) is a tool allowing you to upload your
 Tensorboard events on the cloud and read them online using Google OAuth.
@@ -388,7 +216,7 @@ events will be uploaded on-the-fly.
     minutes of CPU time, which roughly translates to 11 hours for Tensorboard
     dev in our experience.
 
-#### Use `idrjup` command
+### Use `idrjup` command (Legacy)
 
 The way recommended by the official doc but probably the least convenient is to:
 
@@ -399,7 +227,7 @@ This is described in full details in the [official
 docs](http://www.idris.fr/jean-zay/pre-post/jean-zay-jupyter-notebook.html).
 
 
-### gitlab-runner
+## gitlab-runner
 
 CI's workflows are not currently supported on Jean Zay (soon?).
 
@@ -430,7 +258,7 @@ Here is a procedure to run a gitlab-runner in user mode on your account:
     * Check periodically your that your tmux session is still alive (usually killed on
       tuesdays).
 
-#### config.toml example
+### config.toml example
 ```
 concurrent = 1
 check_interval = 0
