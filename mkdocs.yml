@@ -62,8 +62,12 @@ nav:
   - Home: index.md
   - Access procedure: access-procedure.md
   - Tips and Tricks:
-    - Main tips and tricks: tips-and-tricks.md
-    - Singularity: singularity.md
+    - Shell configuration: tips/shell.md
+    - Python: tips/python.md
+    - SLURM: tips/slurm.md
+    - Singularity: tips/singularity.md
+    - Jupyterhub: tips/jupyterhub.md  
+    - Miscellaneous: tips/miscellaneous.md  
   - Limitations: limitations.md
   - Examples:
     - Pytorch examples:

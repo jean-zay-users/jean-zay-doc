@@ -60,6 +60,8 @@ the Jean Zay cluster, e.g.:
 
 - [Official Doc in French (more accurate sometimes)](http://www.idris.fr/eng/jean-zay/)
 
+- [Cheatsheet Idris](http://www.idris.fr/media/su/idrismemento1.pdf)
+
 - [Gitter chat](https://gitter.im/jean-zay-users/jean-zay-doc)
 
 ## Generic advice
