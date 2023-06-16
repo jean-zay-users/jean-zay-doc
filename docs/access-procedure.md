@@ -18,7 +18,7 @@ Here we will focus on the easiest procedure to access Jean Zay, namely the
 developing AI algorithms. Here is a quick overview of the procedure. Each step
 is detailed in the sections below.
 
-1. Create an [EDARI account](https://www.edari.fr/sp/login) (simple
+1. Create an [EDARI account](https://www.edari.fr/splogin) (simple
    personal details). See [this](#edari-account-administrative-account)
    for all the details about this step.
 2. Fill a form about your project (**"Déclaration de dossier"**). Hardest part
@@ -43,22 +43,44 @@ is detailed in the sections below.
    step.
 6. After roughly 2 days, you should be able to connect to Jean Zay.
 
+### Institute-specific information
+
+Some institute-specific things are best put on a non-public repo, e.g. email
+addresses of persons to contact. Here are links to some Institute specific
+information:
+
+- Inria: https://gitlab.inria.fr/jean-zay-users/inria-specific-jean-zay-doc
+
+Feel-free to do a PR to add your own institute link! This is probably best if
+this kind of repo is behind Institute-specific authentication.
+
 ### EDARI account (administrative account)
 
 !!! info "Estimate of the time needed:"
     5 minutes.
 
-To create an EDARI account, two possibilities:
+To create an EDARI account, it is recommended to use
+https://www.edari.fr/splogin which It is available for a wide range of academic
+institutions through RENATER. It will ask you your institute credentials and may
+make your life easier by automatically filling some info for you (e.g. your
+institude security person and your head of the lab)
 
-1. https://www.edari.fr/sp/login (for a wide range of
-   academic institutions through RENATER)
-2. alternatively use https://www.edari.fr/user/register (for example if you can
-   not find your institution in the first link)
+Alternatively use https://www.edari.fr/user/register (for example if you can not
+find your institution in the first link)
 
-In case something goes wrong:
+!!! note
+    If you have clicked on a red button like the one below at one point, it is the
+    same thing as using the recomended link and some info may be automatically
+    filled for you.
 
-- Contact for [EDARI account](https://www.edari.fr/contact)
-- [EDARI FAQ](https://www.edari.fr/faq)
+    <img src="../img/edari-federation-renater.png" width="50%" style="margin-top: 0.2em" style="display: block"/>
+
+
+!!! tip
+    In case something goes wrong:
+
+    - Contact for [EDARI account](https://www.edari.fr/contact)
+    - [EDARI FAQ](https://www.edari.fr/faq)
 
 ### "Déclaration de dossier" (project description)
 
@@ -69,7 +91,7 @@ In case something goes wrong:
 On your [EDARI user space](https://www.edari.fr/utilisateur), click on the
 "Intelligence Artificielle" section and then "Déclaration de dossier" and then
 "Constituer un dossier".
-  
+
 !!! note "Important details:"
     - "Directeur de la structure de recherche" : head of the lab, head of the
       department, head of the institute, do what is easier for you.
@@ -185,7 +207,7 @@ To add additionnal IP addresses to those mentioned on your original declaration:
 
 !!! info "Estimate of the time needed:"
     1h (write a project) + a few days/weeks for approval (depending on the
-    request). 
+    request).
 
 Useful when you have used most of your computing time and want to fill a
 "Demande de ressources au fil de l'eau" (request more hours on the fly), and
