@@ -5,8 +5,8 @@
 Install `miniconda` in `$WORK/miniconda3`:
 
 ```bash
-# download Miniconda installer
-wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh \
+# download Miniconda installer (from conda-forge)
+wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh \
     -O miniconda.sh
 # install Miniconda
 MINICONDA_PATH=$WORK/miniconda3
