@@ -35,6 +35,7 @@ We use gitter for chat, don't hesitate to get involved
 - [Limitations](./limitations.md)
 - Example scripts: [PyTorch examples](./examples/pytorch), [Tensorflow
   examples](./examples/tf), [Tensorflow MPI distributed examples](.examples/tf_mpi/).
+- Example scripts for [pretraining/finetuning/inference of LLMs](https://gitlab.inria.fr/synalp/plm4all) on Jean Zay
 
 In the medium term, more material could be added to discuss tips and tricks,
 limitations, work-arounds, etc ... on Jean Zay. In particular, feel free to
