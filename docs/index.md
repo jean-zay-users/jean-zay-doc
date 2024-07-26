@@ -35,7 +35,6 @@ We use gitter for chat, don't hesitate to get involved
 - [Limitations](./limitations.md)
 - Example scripts: [PyTorch examples](./examples/pytorch), [Tensorflow
   examples](./examples/tf), [Tensorflow MPI distributed examples](.examples/tf_mpi/).
-- Deepspeed/Megatron-DS/FSDP/accelerate/... example scripts for [pretraining/finetuning/inference of LLMs](https://gitlab.inria.fr/synalp/plm4all) on Jean Zay
 
 In the medium term, more material could be added to discuss tips and tricks,
 limitations, work-arounds, etc ... on Jean Zay. In particular, feel free to
@@ -51,19 +50,26 @@ the Jean Zay cluster, e.g.:
 - how to do efficient hyper-parameter tuning at scale;
 - how to synchronize you code between local computer and the cluster.
 
-## Useful links
-
-- [Jean Zay doc targeted towards AI users](http://www.idris.fr/eng/ia/index.htm)
-
-- [Hardware](http://www.idris.fr/eng/jean-zay/cpu/jean-zay-cpu-hw-eng.html)
-
-- [Official Doc](http://www.idris.fr/eng/jean-zay/)
-
-- [Official Doc in French (more accurate sometimes)](http://www.idris.fr/eng/jean-zay/)
-
-- [Cheatsheet Idris](http://www.idris.fr/media/su/idrismemento1.pdf)
+## Relevant external links
 
 - [Gitter chat](https://gitter.im/jean-zay-users/jean-zay-doc)
+
+- Deepspeed/Megatron-DS/FSDP/accelerate/... example scripts for
+  [pretraining/finetuning/inference of LLMs](https://gitlab.inria.fr/synalp/plm4all)
+  on Jean Zay
+
+### Jean-Zay official doc links
+
+- [Jean Zay official doc targeted towards AI users](http://www.idris.fr/eng/ia/index.htm)
+
+- [Jean Zay Official Doc](http://www.idris.fr/eng/jean-zay/)
+
+- [Jean Zay official Doc in French (more accurate sometimes)](http://www.idris.fr/jean-zay/index.html)
+
+- [Jean Zay Hardware](http://www.idris.fr/eng/jean-zay/cpu/jean-zay-cpu-hw-eng.html)
+
+- [Jean Zay Cheatsheet](http://www.idris.fr/media/su/idrismemento1.pdf)
+
 
 ## Generic advice
 
