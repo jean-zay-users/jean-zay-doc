@@ -198,6 +198,9 @@ This will open a new tab in your local browser and show the progress of your tra
 
 ### Use Tensorboard dev
 
+!!! warning "Disclaimer"
+    TensorBoard.dev has been shut down as of January 1, 2024
+
 [Tensorboard dev](https://tensorboard.dev/) is a tool allowing you to upload your
 Tensorboard events on the cloud and read them online using Google OAuth.
 You will find the main Tensorboard tabs, and many others are in development.
