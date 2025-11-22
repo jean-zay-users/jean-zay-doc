@@ -22,8 +22,8 @@ You must also be aware that `$SCRATCH` is regularly "cleaned": files that
 have not been accessed (i.e. at least read) for 30 days are definitely
 removed. So you **risk to lose your data** if your keep it there without using it.
 
-You can consult your disk quota anytime with the command `idrquota` (see
-`idrquota -h`). If you need more space or inodes on your personal spaces
+You can consult your disk quota anytime with the command `idr_quota_user` or `idr_quota_project` (see
+`idr_quota_user -h`). If you need more space or inodes on your personal spaces
 (`$WORK` or `$STORE`), just ask the support team at
 [assist@idris.fr](mailto:assist@idris.fr).
 
