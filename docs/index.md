@@ -31,10 +31,10 @@ We use gitter for chat, don't hesitate to get involved
   important one is the access procedure. It will take roughly 3 weeks (add 1-2
   months on top of that if you have to go through additional security
   background checks). It does seem long but it is definitely worth it.
-- [Tips and tricks](./tips-and-tricks.md)
+- [Tips and tricks](./tips/index.md)
 - [Limitations](./limitations.md)
-- Example scripts: [PyTorch examples](./examples/pytorch), [Tensorflow
-  examples](./examples/tf), [Tensorflow MPI distributed examples](.examples/tf_mpi/).
+- Example scripts: [PyTorch examples](./examples/pytorch/README.md), [Tensorflow
+  examples](./examples/tf/README.md), [Tensorflow MPI distributed examples](./examples/tf/tf_mpi/README.md).
 
 In the medium term, more material could be added to discuss tips and tricks,
 limitations, work-arounds, etc ... on Jean Zay. In particular, feel free to
@@ -59,16 +59,20 @@ the Jean Zay cluster, e.g.:
   on Jean Zay
 
 ### Jean-Zay official doc links
+- [Jean Zay new official documentation](http://www.idris.fr/docs/jean-zay/nouvel-utilisateur/)
 
-- [Jean Zay official doc targeted towards AI users](http://www.idris.fr/eng/ia/index.htm)
+- [Jean Zay Cheatsheet](http://www.idris.fr/assets/files/idrismemento_sans_bbftp-7aa909712545a6d2513ccd644b06fcaa.pdf)
+#### Archive
+Jean Zay has updated their official documentation website, but the new one is not translated in English yet, they advise to use browser translation. However it is still possible to access the archived English version and the specific documentation, please note that they might not be up-to-date with the latest changes.
 
-- [Jean Zay Official Doc](http://www.idris.fr/eng/jean-zay/)
+- [Jean Zay archived Doc targeted towards AI users](http://archive.idris.fr/eng/ia/index.html)
 
-- [Jean Zay official Doc in French (more accurate sometimes)](http://www.idris.fr/jean-zay/index.html)
+- [Jean Zay archived Doc](http://archive.idris.fr/eng/jean-zay/)
 
-- [Jean Zay Hardware](http://www.idris.fr/eng/jean-zay/cpu/jean-zay-cpu-hw-eng.html)
+- [Jean Zay archived Doc in French (more accurate sometimes)](http://archive.idris.fr/jean-zay/index.html)
 
-- [Jean Zay Cheatsheet](http://www.idris.fr/media/su/idrismemento1.pdf)
+- [Jean Zay Hardware](http://archive.idris.fr/eng/jean-zay/cpu/jean-zay-cpu-hw-eng.html)
+
 
 
 ## Generic advice

@@ -24,7 +24,7 @@ is detailed in the sections below.
 2. Fill a form about your project (**"Déclaration de dossier"**). Hardest part
    is to figure out who your "Directeur de la structure de recherche" is and to
    have the form signed by him/her. You also need to write a few lines about
-   your project. See [this](#d%C3%A9claration-de-dossier-project-description)
+   your project. See [this](#declaration-de-dossier-project-description)
    for all the details about this step.
 3. Fill a form about to get a computing account (**"Déclaration de compte
    calcul"**). Hardest part is to figure out who your "Responsable Sécurité
