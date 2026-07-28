@@ -42,7 +42,7 @@ for instructions.
 The documentation is using [mkdocs](https://www.mkdocs.org/) with a few
 plugins. To install them:
 ```
-pip install -e requirements.txt
+pip install -r requirements.txt
 ```
 
 To run `mkdocs` in development mode:
